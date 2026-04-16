@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cladco",
+      "runtimeExecutable": "/Users/ahmedhefni/.local/node/bin/node",
+      "runtimeArgs": [
+        "/Users/ahmedhefni/Desktop/CladCo/node_modules/.bin/next",
+        "dev"
+      ],
+      "env": {
+        "PATH": "/Users/ahmedhefni/.local/node/bin:/usr/bin:/bin"
+      },
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

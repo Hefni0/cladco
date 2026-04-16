@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Laviossa — CladCo brand font */
+@font-face {
+  font-family: "Laviossa";
+  src: url("/fonts/Laviossa-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: white;
+    font-family: "Laviossa", "Inter", system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, a, span, button, li, div {
+    font-family: "Laviossa", "Inter", system-ui, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Primary CTA — dark orange */
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-2.5 bg-[#c2410c] text-white font-semibold
+           px-7 py-3.5 rounded-full text-sm tracking-wide
+           transition-all duration-200 ease-out
+           hover:bg-[#9a3409] hover:scale-[1.02] hover:shadow-lg hover:shadow-orange-900/40
+           active:scale-[0.98];
+  }
+
+  /* Secondary outlined button */
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-[#c2410c] text-[#c2410c] font-semibold
+           px-7 py-3.5 rounded-full text-sm tracking-wide
+           transition-all duration-200 ease-out
+           hover:bg-[#c2410c] hover:text-white hover:scale-[1.02]
+           active:scale-[0.98];
+  }
+
+  /* Light button for dark sections */
+  .btn-light {
+    @apply inline-flex items-center gap-2.5 bg-[#c2410c] text-white font-semibold
+           px-7 py-3.5 rounded-full text-sm tracking-wide
+           transition-all duration-200 ease-out
+           hover:bg-[#9a3409] hover:scale-[1.02] hover:shadow-lg
+           active:scale-[0.98];
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.2em] uppercase text-[#c2410c] mb-4;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-white leading-tight;
+  }
+}
+
+/* Divider gradient */
+.divider {
+  background: linear-gradient(90deg, transparent, #2a2a2a, transparent);
+  height: 1px;
+  width: 100%;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(194, 65, 12, 0.15);
+}
+
+/* Floating WhatsApp pulse ring */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.whatsapp-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #25d366;
+  animation: pulse-ring 2s ease-out infinite;
+  z-index: -1;
+}

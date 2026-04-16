@@ -1,0 +1,211 @@
+export type Lang = "en" | "ar";
+
+export const t = {
+  en: {
+    nav: {
+      whatsapp: "WhatsApp Us",
+    },
+    hero: {
+      badge: "Professional Appearance Partner",
+      headline1: "Your Team.",
+      headline2: "Elevated.",
+      sub: "CladCo crafts custom uniforms, branded merchandise, and design solutions that make your business look polished, professional, and unforgettable.",
+      cta1: "Contact Us on WhatsApp",
+      cta2: "Get a Free Quote",
+      trust: "Trusted by restaurants · cafes · corporations · schools · events",
+      scroll: "Scroll",
+    },
+    services: {
+      label: "What We Do",
+      heading: "Everything your team needs to look the part",
+      items: [
+        {
+          title: "Custom Uniforms",
+          description: "Tailored workwear that reflects your brand identity. From fabric selection to final stitch — every detail crafted for a sharp, consistent look.",
+          tags: ["Embroidery", "Screen Print", "Custom Fit"],
+        },
+        {
+          title: "Branded Items",
+          description: "Mugs, notebooks, badges, bags, and more — all branded with your logo. Reinforce your identity at every touchpoint, inside and outside your business.",
+          tags: ["Mugs & Cups", "Notebooks", "Badges & Lanyards"],
+        },
+        {
+          title: "Design Services",
+          description: "No design? No problem. Our team creates professional layouts, mockups, and brand presentation assets — so everything looks intentional and premium.",
+          tags: ["Mockups", "Brand Guidelines", "Artwork"],
+        },
+      ],
+    },
+    audience: {
+      label: "Who We Serve",
+      heading: "Built for businesses that care about their image",
+      items: [
+        { emoji: "🍽️", label: "Restaurants", desc: "Chef coats, server uniforms, host attire" },
+        { emoji: "☕", label: "Cafes", desc: "Branded aprons, caps, and barista wear" },
+        { emoji: "🏢", label: "Businesses", desc: "Office wear, reception, sales teams" },
+        { emoji: "👔", label: "Corporate Teams", desc: "Executive uniforms & branded merch kits" },
+        { emoji: "🎓", label: "Schools", desc: "Student uniforms, faculty wear, PE kits" },
+        { emoji: "🎪", label: "Events", desc: "Staff vests, crew shirts, event branding" },
+      ],
+    },
+    why: {
+      label: "Why CladCo",
+      heading1: "More than a supplier.",
+      heading2: "A partner in",
+      heading3: "presentation.",
+      sub: "We don't just manufacture. We help you think about how your team represents your brand — and then we execute it flawlessly.",
+      stat: "100%",
+      statSub: "Custom production — no off-the-shelf shortcuts",
+      reasons: [
+        { number: "01", title: "Professional Look, Every Time", description: "Consistency builds trust. We ensure your team looks polished and aligned — whether it's one person or one hundred." },
+        { number: "02", title: "Fully Custom Solutions", description: "Every business is different. We work with your brand colors, logo, and style to produce something uniquely yours." },
+        { number: "03", title: "Flexible Quality Tiers", description: "From budget-friendly starter packs to premium production runs — we offer options that match your scale and ambition." },
+        { number: "04", title: "Reliable, End-to-End", description: "Design, produce, deliver. We own the full process so you never have to coordinate between multiple vendors." },
+      ],
+    },
+    process: {
+      label: "How It Works",
+      heading: "Simple process. Professional results.",
+      cta: "Start the Process",
+      steps: [
+        { step: "01", title: "Tell Us What You Need", description: "Send us a message on WhatsApp. Share your requirements, team size, and any ideas you have." },
+        { step: "02", title: "We Design & Confirm", description: "Our team prepares mockups and samples. You review, provide feedback, and approve before anything goes to production." },
+        { step: "03", title: "We Produce", description: "Once approved, production begins with quality materials and careful attention to your brand details." },
+        { step: "04", title: "We Deliver", description: "Your order arrives on time, packaged properly, ready for your team to wear with pride." },
+      ],
+    },
+    cta: {
+      badge: "Ready to Upgrade?",
+      heading1: "Let's Upgrade",
+      heading2: "Your Team's Look.",
+      sub: "One message is all it takes. Tell us about your team and we'll handle everything — from design to delivery.",
+      button: "Chat with Us on WhatsApp",
+      trust1: "No commitment required",
+      trust2: "Fast response time",
+      trust3: "Free consultation",
+    },
+    contact: {
+      locationLabel: "Location",
+      locationValue: "Saudi Arabia",
+      locationSub: "Serving businesses across the Kingdom",
+      phoneLabel: "Phone",
+      phoneSub: "Sun – Thu, 9am – 6pm",
+      waLabel: "WhatsApp",
+      waValue: "Message us directly",
+      waSub: "We typically reply within minutes",
+    },
+    footer: {
+      tagline: "Your professional appearance partner — uniforms, branded items & design.",
+      rights: "All rights reserved.",
+      country: "Based in Saudi Arabia 🇸🇦",
+      whatsapp: "WhatsApp Us",
+    },
+    floating: {
+      tooltip: "💬 Chat with us!",
+    },
+  },
+
+  ar: {
+    nav: {
+      whatsapp: "واتساب",
+    },
+    hero: {
+      badge: "شريك المظهر المهني",
+      headline1: "فريقك.",
+      headline2: "بمستوى أعلى.",
+      sub: "كلادكو تصمم يونيفورم مخصص، منتجات مُبرندة، وحلول تصميم تجعل مشروعك يبدو احترافياً وأنيقاً لا يُنسى.",
+      cta1: "تواصل معنا على واتساب",
+      cta2: "احصل على عرض سعر",
+      trust: "نثق بنا المطاعم · المقاهي · الشركات · المدارس · الفعاليات",
+      scroll: "تمرير",
+    },
+    services: {
+      label: "ما نقدمه",
+      heading: "كل ما يحتاجه فريقك ليبدو في أفضل صورة",
+      items: [
+        {
+          title: "يونيفورم مخصص",
+          description: "ملابس عمل مفصّلة تعكس هوية علامتك التجارية. من اختيار القماش حتى آخر غرزة — كل تفصيل مصمم لمظهر حاد ومتسق.",
+          tags: ["تطريز", "طباعة سيلك", "مقاسات مخصصة"],
+        },
+        {
+          title: "منتجات مُبرندة",
+          description: "أكواب، دفاتر، شارات، حقائب والمزيد — كلها مطبوعة بشعارك. عزز هويتك في كل نقطة تواصل داخل مشروعك وخارجه.",
+          tags: ["أكواب", "دفاتر", "شارات وبطاقات"],
+        },
+        {
+          title: "خدمات التصميم",
+          description: "لا تملك تصميماً؟ لا مشكلة. فريقنا يُعدّ تصاميم احترافية وعروضاً توضيحية — لتبدو كل تفاصيل علامتك متقنة وراقية.",
+          tags: ["موكاب", "دليل الهوية", "ملفات الطباعة"],
+        },
+      ],
+    },
+    audience: {
+      label: "من نخدم",
+      heading: "مصمم للشركات التي تهتم بمظهرها",
+      items: [
+        { emoji: "🍽️", label: "المطاعم", desc: "مرايل الشيف، يونيفورم الخدمة، زي الاستقبال" },
+        { emoji: "☕", label: "المقاهي", desc: "مرايل مُبرندة، قبعات، زي الباريستا" },
+        { emoji: "🏢", label: "الشركات", desc: "ملابس مكتبية، استقبال، فرق المبيعات" },
+        { emoji: "👔", label: "الفرق المؤسسية", desc: "يونيفورم تنفيذي وحقائب هدايا مُبرندة" },
+        { emoji: "🎓", label: "المدارس", desc: "زي طلابي، هيئة تدريسية، ملابس رياضية" },
+        { emoji: "🎪", label: "الفعاليات", desc: "سترات الطاقم، تيشيرتات، هوية الفعالية" },
+      ],
+    },
+    why: {
+      label: "لماذا كلادكو",
+      heading1: "أكثر من مورد.",
+      heading2: "شريك في",
+      heading3: "المظهر.",
+      sub: "نحن لا نصنع فقط. نساعدك على التفكير في كيفية تمثيل فريقك لعلامتك التجارية — ثم ننفّذ ذلك باحترافية.",
+      stat: "١٠٠٪",
+      statSub: "إنتاج مخصص — بدون حلول جاهزة",
+      reasons: [
+        { number: "٠١", title: "مظهر احترافي دائماً", description: "الاتساق يبني الثقة. نضمن أن يبدو فريقك أنيقاً ومتناسقاً — سواء كان شخصاً واحداً أو مئة شخص." },
+        { number: "٠٢", title: "حلول مخصصة بالكامل", description: "كل مشروع مختلف. نعمل مع ألوانك وشعارك وأسلوبك لننتج شيئاً يخصك أنت فقط." },
+        { number: "٠٣", title: "مرونة في مستويات الجودة", description: "من باقات البداية الاقتصادية إلى الإنتاج الراقي — لدينا خيارات تناسب حجمك وطموحك." },
+        { number: "٠٤", title: "موثوق من البداية للنهاية", description: "تصميم، إنتاج، توصيل. نتولى العملية كاملة لتتفرغ لعملك." },
+      ],
+    },
+    process: {
+      label: "كيف نعمل",
+      heading: "خطوات بسيطة. نتائج احترافية.",
+      cta: "ابدأ الآن",
+      steps: [
+        { step: "٠١", title: "أخبرنا بما تحتاج", description: "أرسل لنا رسالة على واتساب. شارك متطلباتك، حجم فريقك، وأي أفكار لديك." },
+        { step: "٠٢", title: "نصمم ونؤكد", description: "يُعد فريقنا موكاب وعينات. تراجع وتعطي ملاحظاتك وتوافق قبل أن يبدأ الإنتاج." },
+        { step: "٠٣", title: "ننتج", description: "بعد الموافقة يبدأ الإنتاج بمواد عالية الجودة مع الاهتمام الكامل بتفاصيل علامتك." },
+        { step: "٠٤", title: "نوصّل", description: "يصلك طلبك في الوقت المحدد، معبأً بشكل مناسب، جاهزاً ليرتديه فريقك بفخر." },
+      ],
+    },
+    cta: {
+      badge: "هل أنت مستعد للترقية؟",
+      heading1: "لنرتقِ بمظهر",
+      heading2: "فريقك.",
+      sub: "رسالة واحدة تكفي. أخبرنا عن فريقك وسنتولى كل شيء — من التصميم حتى التوصيل.",
+      button: "تواصل معنا على واتساب",
+      trust1: "بدون أي التزام",
+      trust2: "رد سريع",
+      trust3: "استشارة مجانية",
+    },
+    contact: {
+      locationLabel: "الموقع",
+      locationValue: "المملكة العربية السعودية",
+      locationSub: "نخدم الشركات في جميع أنحاء المملكة",
+      phoneLabel: "الهاتف",
+      phoneSub: "الأحد – الخميس، ٩ص – ٦م",
+      waLabel: "واتساب",
+      waValue: "راسلنا مباشرة",
+      waSub: "عادةً نرد في غضون دقائق",
+    },
+    footer: {
+      tagline: "شريكك في المظهر المهني — يونيفورم، منتجات مُبرندة وتصميم.",
+      rights: "جميع الحقوق محفوظة.",
+      country: "🇸🇦 المملكة العربية السعودية",
+      whatsapp: "واتساب",
+    },
+    floating: {
+      tooltip: "💬 تواصل معنا!",
+    },
+  },
+};

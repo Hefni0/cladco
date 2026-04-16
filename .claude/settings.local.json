@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export PATH=\"/Users/ahmedhefni/.local/node/bin:$PATH\")",
+      "Bash(npx vercel:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -c ':*)"
+    ]
+  }
+}
