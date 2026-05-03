@@ -1,3 +1,11 @@
+// =============================================================================
+// FILE: components/StatsAndCharts.tsx (NEW)
+// Two parts in one component:
+//   1. Stats grid (4 stats with animated counters, light bg)
+//   2. Charts section (tabbed: Journey + Quality, dark bg)
+// Uses translations from t[lang].stats and t[lang].charts
+// =============================================================================
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -47,7 +55,7 @@ function JourneyChart({ stages, disclaimer }: {
 }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const lineRef = useRef<SVGPathElement | null>(null);
-  const inView = useInView(wrapRef, { once: true, margin: "-100px" });
+  const inView = useInView(wrapRef, { once: true, threshold: 0.3 } as never);
 
   useEffect(() => {
     if (!inView || !lineRef.current) return;
@@ -55,25 +63,27 @@ function JourneyChart({ stages, disclaimer }: {
     const len = path.getTotalLength();
     path.style.strokeDasharray = `${len}`;
     path.style.strokeDashoffset = `${len}`;
-    path.getBoundingClientRect();
+    path.getBoundingClientRect(); // force reflow
     path.style.transition = "stroke-dashoffset 2.4s cubic-bezier(0.16,1,0.3,1)";
     path.style.strokeDashoffset = "0";
   }, [inView]);
 
+  // Map stage index to (x, y) on the SVG canvas
   const points = [
-    { x: 80,   y: 165 },
-    { x: 315,  y: 105 },
-    { x: 550,  y: 70  },
-    { x: 785,  y: 50  },
-    { x: 1020, y: 20  },
+    { x: 80,   y: 165 }, // Day 1
+    { x: 315,  y: 105 }, // Day 5
+    { x: 550,  y: 70  }, // Day 8
+    { x: 785,  y: 50  }, // Day 18
+    { x: 1020, y: 20  }, // Day 25
   ];
 
+  // Where to position labels (above or below the curve)
   const labelOffsets = [
-    { y: -65, descY: -45 },
+    { y: -65, descY: -45 }, // Day 1 — labels above
     { y: -50, descY: -30 },
     { y: -30, descY: -10 },
-    { y: 60,  descY: 80  },
-    { y: 100, descY: 120 },
+    { y: 60,  descY: 80  }, // Day 18 — labels BELOW
+    { y: 100, descY: 120 }, // Day 25 — labels BELOW
   ];
 
   return (
@@ -100,12 +110,14 @@ function JourneyChart({ stages, disclaimer }: {
 
         <line className="journey-axis-line" x1="80" y1="200" x2="1020" y2="200" />
 
+        {/* Day labels along axis */}
         {stages.map((s, i) => (
           <text key={i} className="journey-day" x={points[i].x} y={225} textAnchor="middle">
             {s.day}
           </text>
         ))}
 
+        {/* Animated area under curve */}
         <motion.path
           className="journey-area"
           d="M 80 165 C 200 160, 250 130, 315 105 C 400 75, 470 60, 550 70 C 650 80, 720 70, 785 50 C 880 30, 950 25, 1020 20 L 1020 200 L 80 200 Z"
@@ -114,12 +126,14 @@ function JourneyChart({ stages, disclaimer }: {
           transition={{ duration: 1.2, delay: 1, ease }}
         />
 
+        {/* Animated progress line */}
         <path
           ref={lineRef}
           className="journey-progress-line"
           d="M 80 165 C 200 160, 250 130, 315 105 C 400 75, 470 60, 550 70 C 650 80, 720 70, 785 50 C 880 30, 950 25, 1020 20"
         />
 
+        {/* Stage nodes + labels */}
         {stages.map((s, i) => {
           const isFinal = i === stages.length - 1;
           const off = labelOffsets[i];
@@ -163,6 +177,7 @@ function JourneyChart({ stages, disclaimer }: {
         })}
       </svg>
 
+      {/* Disclaimer */}
       <div
         className="mt-6 text-center font-light italic"
         style={{ fontSize: "0.78rem", color: "rgba(249,248,246,0.45)" }}
@@ -194,8 +209,9 @@ function QualityChart({
   radarLabels: { label: string; value: string }[];
   active: boolean;
 }) {
+  // Pentagon vertex coordinates (scaled to ~95% chart radius)
   const vertices = [
-    { x: 0,    y: -171 },
+    { x: 0,    y: -171 }, // top
     { x: 154,  y: -50  },
     { x: 97,   y: 134  },
     { x: -102, y: 140  },
@@ -204,18 +220,22 @@ function QualityChart({
 
   return (
     <div className="grid md:grid-cols-2 gap-12 items-center py-8">
+      {/* Radar SVG */}
       <div className="relative w-full max-w-[480px] mx-auto aspect-square">
         <svg className="w-full h-full overflow-visible" viewBox="-220 -220 440 440">
+          {/* Grid pentagons (5 levels) */}
           <polygon className="radar-grid" points="0,-180 171,-56 106,146 -106,146 -171,-56" />
           <polygon className="radar-grid" points="0,-144 137,-44 85,117 -85,117 -137,-44" />
           <polygon className="radar-grid" points="0,-108 103,-33 64,87 -64,87 -103,-33" />
           <polygon className="radar-grid" points="0,-72 68,-22 42,58 -42,58 -68,-22" />
           <polygon className="radar-grid radar-grid-active" points="0,-36 34,-11 21,29 -21,29 -34,-11" />
 
+          {/* Axes */}
           {vertices.map((v, i) => (
             <line key={i} className="radar-axis" x1={0} y1={0} x2={v.x * 1.1} y2={v.y * 1.1} />
           ))}
 
+          {/* Data shape (animated scale) */}
           <motion.polygon
             className="radar-shape"
             points={vertices.map((v) => `${v.x},${v.y}`).join(" ")}
@@ -225,6 +245,7 @@ function QualityChart({
             style={{ transformOrigin: "center" }}
           />
 
+          {/* Data points */}
           {vertices.map((v, i) => (
             <motion.circle
               key={i}
@@ -239,6 +260,7 @@ function QualityChart({
             />
           ))}
 
+          {/* Labels around radar */}
           {radarLabels.map((lbl, i) => {
             const v = vertices[i];
             const lx = v.x * 1.18;
@@ -257,6 +279,7 @@ function QualityChart({
         </svg>
       </div>
 
+      {/* Side list */}
       <div className="flex flex-col gap-2">
         {items.map((it, i) => (
           <motion.div
@@ -309,7 +332,7 @@ export default function StatsAndCharts() {
 
   return (
     <>
-      {/* Stats Section */}
+      {/* ════════ Stats Section (light bg) ════════ */}
       <section className="py-24 md:py-28 px-5 md:px-8" style={{ background: "#F9F8F6" }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -378,7 +401,7 @@ export default function StatsAndCharts() {
         </div>
       </section>
 
-      {/* Charts Section */}
+      {/* ════════ Charts Section (dark bg) ════════ */}
       <section className="chart-section-bg py-24 md:py-32 px-5 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -416,6 +439,7 @@ export default function StatsAndCharts() {
             </motion.p>
           </motion.div>
 
+          {/* Tabs */}
           <motion.div
             className="chart-tabs-wrap mb-10 inline-flex"
             initial={{ opacity: 0, y: 10 }}
@@ -446,6 +470,7 @@ export default function StatsAndCharts() {
             </button>
           </motion.div>
 
+          {/* Panels */}
           <div className="relative">
             {tab === "journey" ? (
               <JourneyChart stages={tc.journeyStages} disclaimer={tc.disclaimer} />
@@ -462,3 +487,4 @@ export default function StatsAndCharts() {
     </>
   );
 }
+

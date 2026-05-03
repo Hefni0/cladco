@@ -1,3 +1,10 @@
+// =============================================================================
+// FILE: lib/translations.ts
+// CHANGES vs old file:
+//   - APPENDED `stats` and `charts` keys to BOTH t.en and t.ar
+//   - All existing keys preserved as-is
+// =============================================================================
+
 export type Lang = "en" | "ar";
 
 export const t = {
@@ -111,6 +118,7 @@ export const t = {
       quantityPlaceholder: "e.g. 50 pieces", cityPlaceholder: "Your city",
       fabricPlaceholder: "e.g. Cotton, Polyester... (optional)",
     },
+    // ─────────── NEW: Stats + Charts (v2 upgrade) ───────────
     stats: {
       label: "By the Numbers",
       heading1: "Built on",
@@ -265,6 +273,7 @@ export const t = {
       quantityPlaceholder: "مثال: ٥٠ قطعة", cityPlaceholder: "مدينتك",
       fabricPlaceholder: "مثال: قطن، بوليستر... (اختياري)",
     },
+    // ─────────── NEW: Stats + Charts (v2 upgrade) ───────────
     stats: {
       label: "بالأرقام",
       heading1: "مبني على",
@@ -309,3 +318,4 @@ export const t = {
     },
   },
 };
+

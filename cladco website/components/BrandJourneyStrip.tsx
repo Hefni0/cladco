@@ -1,116 +1,76 @@
+// =============================================================================
+// FILE: components/BrandJourneyStrip.tsx (REPLACED — matches demo exactly)
+// NOTE: Demo uses CSS shapes. Original videos in /public/videos/ are preserved
+// — Ahmed will re-integrate them manually after this clone is in place.
+// =============================================================================
+
 "use client";
 
 import { motion } from "framer-motion";
+import { useLang } from "@/lib/LangContext";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 
-const GOLD = "rgba(154,139,110,";
-
-// blend: "screen" kills black bg, "multiply" kills white bg
-const ITEMS = [
-  { label: "Cup",      src: "/videos/cup.mp4",      blend: "multiply" },
-  { label: "Notebook", src: "/videos/notebook.mp4", blend: "screen"   },
-  { label: "T-Shirt",  src: "/videos/tshirt.mp4",   blend: "screen"   },
-];
-
-function FlowArrow() {
-  return (
-    <div className="hidden sm:flex items-center mb-6 flex-shrink-0">
-      <svg width="36" height="10" viewBox="0 0 36 10" fill="none" aria-hidden>
-        <path
-          d="M 0,5 L 28,5 M 22,1 L 28,5 L 22,9"
-          stroke={`${GOLD}0.3)`} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"
-        />
-      </svg>
-    </div>
-  );
-}
-
 export default function BrandJourneyStrip() {
+  const { lang } = useLang();
+  const isAr = lang === "ar";
+
+  const cards = isAr
+    ? [
+        { tag: "— ملابس",     title: "تيشيرتات مخصصة",  desc: "تصميمك. قماش راقٍ. طباعة دقيقة.",          shape: "tshirt" },
+        { tag: "— أكواب",     title: "أكواب بهويتك",     desc: "نقاط تواصل يومية مع علامتك.",            shape: "cup"    },
+        { tag: "— قرطاسية",   title: "دفاتر",             desc: "ورق راقٍ. أغلفة بهويتك. انطباع يدوم.",   shape: "book"   },
+      ]
+    : [
+        { tag: "— Apparel",    title: "Custom T-shirts",   desc: "Your design. Premium fabric. Sharp prints.",        shape: "tshirt" },
+        { tag: "— Drinkware",  title: "Branded Cups",      desc: "Daily touchpoints with your brand identity.",       shape: "cup"    },
+        { tag: "— Stationery", title: "Notebooks",         desc: "Premium paper. Branded covers. Lasting impressions.", shape: "book"   },
+      ];
+
+  const heading = isAr ? "شاهد علامتك " : "Watch your brand ";
+  const headingItalic = isAr ? "تنبض بالحياة." : "come to life.";
+  const label = isAr ? "من الفراغ إلى الهوية" : "From Blank to Branded";
+
   return (
-    <section
-      className="py-12 md:py-16 relative overflow-hidden"
-      style={{ background: "#1C2B45", borderTop: "1px solid rgba(154,139,110,0.14)" }}
-      aria-label="Brand transformation showcase"
-    >
-      <div className="max-w-2xl mx-auto px-5 md:px-8 relative" style={{ zIndex: 2 }}>
-
-        {/* Label */}
-        <motion.p
-          className="text-center text-[10px] tracking-[0.28em] uppercase font-semibold mb-10"
-          style={{ color: `${GOLD}0.5)`, fontFamily: "Inter, system-ui, sans-serif" }}
-          variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
-        >
-          From Blank to Branded
-        </motion.p>
-
-        {/* Video thumbnails row */}
+    <section className="brand-journey-section">
+      <div className="container">
         <motion.div
-          className="flex items-end justify-center gap-4 sm:gap-6"
-          variants={stagger(0.15)} initial="hidden" whileInView="visible" viewport={viewport}
+          className="reveal"
+          style={{ textAlign: "center", marginBottom: "4rem" }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.08)}
         >
-          {ITEMS.map((item, idx) => (
-            <div key={item.label} className="flex items-end gap-4 sm:gap-6">
-              <motion.div
-                className="flex flex-col items-center gap-2"
-                variants={fadeUp}
-              >
-                {/* Small video card */}
-                <motion.div
-                  className="relative overflow-hidden"
-                  style={{
-                    width: 72,
-                    height: 88,
-                    borderRadius: 8,
-                    border: `1px solid ${GOLD}0.18)`,
-                    background: "transparent",
-                    flexShrink: 0,
-                  }}
-                  whileHover={{ scale: 1.08, y: -4 }}
-                  transition={{ type: "spring", stiffness: 350, damping: 22 }}
-                >
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{
-                      display: "block",
-                      mixBlendMode: item.blend as React.CSSProperties["mixBlendMode"],
-                    }}
-                  >
-                    <source src={item.src} type="video/mp4" />
-                  </video>
-                </motion.div>
-
-                {/* Label */}
-                <p
-                  className="text-[9px] tracking-[0.2em] uppercase font-semibold"
-                  style={{ color: `${GOLD}0.45)`, fontFamily: "Inter, system-ui, sans-serif" }}
-                >
-                  {item.label}
-                </p>
-              </motion.div>
-
-              {/* Arrow between items (not after last) */}
-              {idx < ITEMS.length - 1 && <FlowArrow />}
-            </div>
-          ))}
+          <motion.div className="section-label" variants={fadeUp} style={{ justifyContent: "center" }}>
+            {label}
+          </motion.div>
+          <motion.h2 className="section-heading" variants={fadeUp} style={{ margin: "0 auto" }}>
+            {heading}<span className="italic">{headingItalic}</span>
+          </motion.h2>
         </motion.div>
 
-        {/* Tagline */}
-        <motion.p
-          className="text-center mt-8 text-xs font-light"
-          style={{
-            color: "rgba(249,248,246,0.3)",
-            letterSpacing: "0.06em",
-            fontFamily: "Inter, system-ui, sans-serif",
-          }}
-          variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
+        <motion.div
+          className="brand-journey-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.12)}
         >
-          Your logo. Your identity. On every product we deliver.
-        </motion.p>
+          {cards.map((c, i) => (
+            <motion.div key={i} className="bj-card" variants={fadeUp}>
+              <div className="bj-card-mock">
+                <div className={`bj-shape bj-shape-${c.shape}`} />
+              </div>
+              <div className="bj-card-content">
+                <div className="bj-card-label">{c.tag}</div>
+                <div className="bj-card-title">{c.title}</div>
+                <div className="bj-card-desc">{c.desc}</div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
+

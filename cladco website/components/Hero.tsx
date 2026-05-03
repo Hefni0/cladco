@@ -1,3 +1,15 @@
+// =============================================================================
+// FILE: components/Hero.tsx
+// CHANGES vs old file:
+//   - NEW logo flow: appears at viewport CENTER first (2.4s), then LIFTS UP (1.2s),
+//     then headline + sub + CTAs cascade in (4.0s+)
+//   - Mouse-tracking gold glow inside hero
+//   - Magnetic CTA buttons (translate toward cursor)
+//   - Letter-by-letter headline reveal
+//   - Scroll indicator without "Scroll" text — just animated line
+//   - Preserves: HeroParticles, BrandIconBg, click pulse, ticker, all translations
+// =============================================================================
+
 "use client";
 
 import Image from "next/image";
@@ -80,7 +92,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: "#1C2B45" }}
+      style={{ background: "#0C0C0B" }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
@@ -113,9 +125,12 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-56 pointer-events-none" style={{ background: "linear-gradient(to top, #1C2B45, transparent)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-56 pointer-events-none" style={{ background: "linear-gradient(to top, #0C0C0B, transparent)" }} />
 
-      {/* LOGO — absolutely positioned at viewport center, then lifts up via globals.css keyframes */}
+      {/* ============================================================
+          LOGO — absolutely positioned at viewport CENTER first,
+          then animates UP to top via globals.css keyframes
+          ============================================================ */}
       <div
         ref={logoWrapRef}
         className="logo-cinematic"
@@ -134,7 +149,10 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* CONTENT — Headline + sub + CTAs appear after logo lifts up */}
+      {/* ============================================================
+          CONTENT — Headline + sub + CTAs appear AFTER logo lifts up
+          padding-top:38vh keeps them below the lifted logo position
+          ============================================================ */}
       <div className="hero-content-v2 relative max-w-5xl mx-auto px-5 md:px-8 text-center pb-16" style={{ zIndex: 10 }}>
 
         {/* Badge */}
@@ -222,7 +240,7 @@ export default function Hero() {
         </motion.p>
       </div>
 
-      {/* Scroll indicator (line only) */}
+      {/* Scroll indicator (line only, no text) */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0 }}
@@ -242,3 +260,4 @@ function WAIcon() {
     </svg>
   );
 }
+
