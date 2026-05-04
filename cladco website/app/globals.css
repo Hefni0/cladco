@@ -426,3 +426,43 @@
   animation: heroFade 1s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   3D LOGO BACKGROUND — blurred, slow drift + rotation
+   ═══════════════════════════════════════════════════════════ */
+.hero-3d-bg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-3d-bg img {
+  width: min(120vmin, 1100px);
+  height: auto;
+  opacity: 0.32;
+  filter: blur(28px) saturate(1.15);
+  mix-blend-mode: screen;
+  transform-origin: 50% 50%;
+  animation:
+    bg3dDrift 18s ease-in-out infinite alternate,
+    bg3dSpin  90s linear infinite;
+  will-change: transform;
+}
+@keyframes bg3dSpin {
+  from { rotate: 0deg; }
+  to   { rotate: 360deg; }
+}
+@keyframes bg3dDrift {
+  0%   { transform: translate3d(-2%, -1%, 0) scale(1.02); }
+  50%  { transform: translate3d( 2%,  1%, 0) scale(1.06); }
+  100% { transform: translate3d(-1%,  2%, 0) scale(1.03); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-3d-bg img {
+    animation: none;
+    transform: none;
+  }
+}
+

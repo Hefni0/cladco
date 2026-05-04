@@ -35,7 +35,7 @@ export default function Navbar() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#1C2B45]/95 backdrop-blur-md shadow-sm border-b border-[#243652]"
+            ? "bg-[#1a1816]/95 backdrop-blur-md shadow-sm border-b border-[#2a2724]"
             : "bg-transparent"
         }`}
         initial={{ y: -24, opacity: 0 }}
@@ -145,7 +145,7 @@ export default function Navbar() {
           <motion.div
             className="md:hidden fixed top-20 left-0 right-0 z-40 overflow-hidden"
             style={{
-              background: "#1C2B45",
+              background: "#1a1816",
               borderBottom: "1px solid rgba(154,139,110,0.15)",
             }}
             initial={{ opacity: 0, y: -12 }}

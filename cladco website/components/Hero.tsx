@@ -77,17 +77,14 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ background: "#1a1816" }}
     >
-      {/* Subtle grid background (preserved from old hero) */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* 3D CladCo logo — blurred, slow rotation, centered behind everything */}
+      <div className="hero-3d-bg" aria-hidden="true">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/icon-3d.png" alt="" />
+      </div>
 
       {/* Static ambient glow */}
       <div
@@ -129,7 +126,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1a1816] to-transparent pointer-events-none" />
 
       {/* Top hairline */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#c2410c] to-transparent opacity-60" />
