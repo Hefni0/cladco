@@ -1,130 +1,139 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
-import { SectionLabelRow } from "./BrandMotif";
-import { fadeUp, scaleUp, stagger, viewport } from "@/lib/motion";
+import { WHATSAPP_URL } from "@/lib/constants";
+import Reveal from "./Reveal";
 
-/* ─── Video sources mapped to product keys ─────────────────────────── */
-const VIDEO_MAP: Record<string, { src: string; type: string }[]> = {
-  tshirt:   [{ src: "/videos/tshirt.mp4",   type: "video/mp4" }],
-  cup:      [{ src: "/videos/cup.mp4",       type: "video/mp4" }],
-  notebook: [{ src: "/videos/notebook.mp4",  type: "video/mp4" }],
-  badge:    [{ src: "/videos/badge.mp4",     type: "video/mp4" }],
+const PRODUCT_IMAGES: Record<string, string> = {
+  tshirt:   "/product-badge.png",
+  cup:      "/product-cup-paper.png",
+  notebook: "/product-notebook.png",
+  badge:    "/product-badge.png",
 };
 
-/* ─── Product data ─────────────────────────────────────────────────── */
-const PRODUCTS = [
-  { key: "tshirt",   rotate: "-1.5deg" },
-  { key: "cup",      rotate: "1.5deg"  },
-  { key: "notebook", rotate: "-1deg"   },
-  { key: "badge",    rotate: "2deg"    },
-];
-
-/* ─── Main section ─────────────────────────────────────────────────── */
 export default function ProductShowcase() {
   const { lang } = useLang();
   const tr = t[lang].showcase;
 
   return (
-    <section className="py-24 md:py-36 relative overflow-hidden" style={{ background: "#F2F1EF" }}>
-      <div className="max-w-6xl mx-auto px-5 md:px-8">
+    <section className="section" style={{ background: "var(--cream-d)" }}>
+      <div className="shell">
 
-        {/* Section header */}
-        <motion.div
-          className="text-center mb-16 md:mb-20"
-          variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
-        >
-          <SectionLabelRow text={tr.label} />
-          <h2 className="section-heading max-w-lg mx-auto" style={{ color: "#0C0C0B" }}>
-            {tr.heading}
-          </h2>
-          <p
-            className="mt-4 text-sm max-w-sm mx-auto"
-            style={{ color: "#6E6E6A", fontFamily: "Inter, system-ui, sans-serif" }}
-          >
-            {tr.sub}
-          </p>
-        </motion.div>
+        <div className="mb-20 md:mb-28">
+          <Reveal>
+            <p className="eyebrow mb-6">{tr.label}</p>
+          </Reveal>
+          <Reveal delay={1}>
+            <h2
+              className="font-display"
+              style={{
+                fontSize: "clamp(2.25rem, 5vw, 4rem)",
+                lineHeight: 1.05,
+                color: "var(--ink)",
+                maxWidth: "32rem",
+                fontWeight: 500,
+              }}
+            >
+              {tr.heading}
+            </h2>
+          </Reveal>
+        </div>
 
-        {/* Product grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7"
-          variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewport}
-        >
-          {PRODUCTS.map((p) => {
-            const item = tr.items.find((x) => x.key === p.key) ?? { label: "", desc: "" };
-            const sources = VIDEO_MAP[p.key] ?? [];
+        {/* Two-column asymmetric grid: alternating large + small */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+          {tr.items.map((item, i) => {
+            const isWide = i === 0 || i === 3; // 0,3 wide; 1,2 narrow
+            const colClass = isWide ? "md:col-span-7" : "md:col-span-5";
             return (
-              <motion.div
-                key={p.key}
-                variants={scaleUp}
-                className="flex flex-col gap-4"
+              <Reveal
+                key={item.key}
+                delay={(((i % 3) + 1) as 1 | 2 | 3)}
+                className={colClass}
               >
-                {/* Card */}
-                <motion.div
-                  className="relative rounded-2xl overflow-hidden cursor-default aspect-square"
-                  style={{
-                    transform: `rotate(${p.rotate})`,
-                    background: "#0C0C0B",
-                    border: "1px solid rgba(154,139,110,0.18)",
-                  }}
-                  whileHover={{ scale: 1.04, rotate: "0deg" }}
-                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
                 >
-                  {/* Video mockup */}
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{ display: "block" }}
-                  >
-                    {sources.map((s) => (
-                      <source key={s.src} src={s.src} type={s.type} />
-                    ))}
-                  </video>
-
-                  {/* Bottom label overlay */}
                   <div
-                    className="absolute bottom-0 left-0 right-0 p-3 z-20"
-                    style={{ background: "linear-gradient(to top, rgba(12,12,11,0.88) 0%, transparent 100%)" }}
+                    className="relative overflow-hidden"
+                    style={{
+                      aspectRatio: isWide ? "5 / 4" : "4 / 5",
+                      background: "var(--cream)",
+                    }}
                   >
-                    <p
-                      className="text-xs font-semibold truncate"
-                      style={{ color: "#F9F8F6", fontFamily: "Inter, system-ui, sans-serif", letterSpacing: "0.06em" }}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={PRODUCT_IMAGES[item.key] ?? "/product-badge.png"}
+                      alt={item.label}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{
+                        transform: "scale(1)",
+                        transition: "transform 1400ms cubic-bezier(.16,1,.3,1), filter 700ms ease",
+                        filter: "saturate(0.92)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.04)";
+                        e.currentTarget.style.filter = "saturate(1.05)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.filter = "saturate(0.92)";
+                      }}
+                    />
+                  </div>
+                  <div className="mt-5 flex items-baseline justify-between">
+                    <h3
+                      className="font-display"
+                      style={{
+                        fontSize: "1.35rem",
+                        color: "var(--ink)",
+                        fontWeight: 500,
+                      }}
                     >
                       {item.label}
-                    </p>
+                    </h3>
+                    <span
+                      className="eyebrow"
+                      style={{ color: "var(--champagne)" }}
+                    >
+                      0{i + 1}
+                    </span>
                   </div>
-                </motion.div>
-
-                {/* Description below card */}
-                <p
-                  className="text-xs leading-relaxed text-center px-1"
-                  style={{ color: "#6E6E6A", fontFamily: "Inter, system-ui, sans-serif" }}
-                >
-                  {item.desc}
-                </p>
-              </motion.div>
+                  <p
+                    className="mt-2"
+                    style={{
+                      color: "var(--ink-soft)",
+                      fontSize: "0.85rem",
+                      lineHeight: 1.6,
+                      fontWeight: 300,
+                      maxWidth: "26rem",
+                    }}
+                  >
+                    {item.desc}
+                  </p>
+                </a>
+              </Reveal>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* Footer line */}
-        <motion.div
-          className="mt-16 text-center"
-          variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
-        >
+        <Reveal delay={2}>
           <p
-            className="text-xs tracking-wider"
-            style={{ color: "#6E6E6A", fontFamily: "Inter, system-ui, sans-serif" }}
+            className="text-center mt-20 md:mt-24"
+            style={{
+              color: "var(--ink-soft)",
+              fontSize: "0.78rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              fontWeight: 500,
+            }}
           >
             {tr.cta}
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

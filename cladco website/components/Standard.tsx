@@ -4,25 +4,25 @@ import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
 import Reveal from "./Reveal";
 
-export default function Process() {
+export default function Standard() {
   const { lang } = useLang();
-  const tr = t[lang].process;
+  const tr = t[lang].standard;
 
   return (
-    <section className="section" style={{ background: "var(--cream)" }}>
+    <section className="section" style={{ background: "var(--cream-d)" }}>
       <div className="shell">
-        <div className="mb-16 md:mb-20">
+        <div className="text-center mb-20 md:mb-28">
           <Reveal>
             <p className="eyebrow mb-6">{tr.label}</p>
           </Reveal>
           <Reveal delay={1}>
             <h2
-              className="font-display"
+              className="font-display mx-auto"
               style={{
                 fontSize: "clamp(2rem, 4.5vw, 3.5rem)",
                 lineHeight: 1.1,
                 color: "var(--ink)",
-                maxWidth: "32rem",
+                maxWidth: "38rem",
                 fontWeight: 500,
               }}
             >
@@ -31,50 +31,41 @@ export default function Process() {
           </Reveal>
         </div>
 
-        {/* Horizontal numbered lines */}
-        <div>
-          {tr.steps.map((s, i) => (
-            <Reveal key={i} delay={((i % 3) + 1) as 1 | 2 | 3}>
-              <div
-                className="grid grid-cols-[3rem_1fr] md:grid-cols-[5rem_15rem_1fr] gap-x-6 md:gap-x-12 py-8 md:py-10"
-                style={{
-                  borderTop: "1px solid var(--hairline)",
-                  borderBottom: i === tr.steps.length - 1 ? "1px solid var(--hairline)" : "none",
-                }}
-              >
+        {/* 3 pillars in a row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 md:gap-x-12">
+          {tr.pillars.map((p, i) => (
+            <Reveal key={i} delay={((i + 1) as 1 | 2 | 3)}>
+              <div className="text-center md:text-left">
                 <span
-                  className="font-display"
+                  className="font-display block mb-6"
                   style={{
                     color: "var(--champagne)",
-                    fontSize: "1.5rem",
                     fontStyle: "italic",
-                    lineHeight: 1,
+                    fontSize: "1.5rem",
                   }}
                 >
-                  {s.step}
+                  0{i + 1}
                 </span>
                 <h3
-                  className="font-display"
+                  className="font-display mb-4"
                   style={{
-                    fontSize: "clamp(1.25rem, 2vw, 1.6rem)",
+                    fontSize: "1.4rem",
                     color: "var(--ink)",
-                    lineHeight: 1.2,
                     fontWeight: 500,
+                    lineHeight: 1.25,
                   }}
                 >
-                  {s.title}
+                  {p.title}
                 </h3>
                 <p
-                  className="col-span-2 md:col-span-1 mt-2 md:mt-0"
                   style={{
                     color: "var(--ink-soft)",
                     fontSize: "0.92rem",
-                    lineHeight: 1.65,
+                    lineHeight: 1.7,
                     fontWeight: 300,
-                    maxWidth: "32rem",
                   }}
                 >
-                  {s.description}
+                  {p.desc}
                 </p>
               </div>
             </Reveal>
