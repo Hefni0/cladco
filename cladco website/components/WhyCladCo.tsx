@@ -35,7 +35,7 @@ export default function WhyCladCo() {
           <div className="space-y-0 divide-y divide-[#1e1e1e]">
             {tr.reasons.map((r, i) => (
               <div key={i} className="py-8 flex gap-6 group">
-                <span className="text-xs font-bold text-[#2a2a2a] tracking-widest mt-1 min-w-[28px] group-hover:text-[#c2410c] transition-colors">
+                <span className="text-xs font-bold text-[#2a2a2a] tracking-widest mt-1 min-w-[28px] group-hover:text-[#9A8B6E] transition-colors">
                   {r.number}
                 </span>
                 <div>
