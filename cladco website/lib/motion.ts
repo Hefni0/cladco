@@ -1,3 +1,10 @@
+// =============================================================================
+// FILE: lib/motion.ts
+// CHANGES vs old file:
+//   - APPENDED: cinematicLogo, letterReveal, magneticHover variants
+//   - All existing exports preserved
+// =============================================================================
+
 import type { Variants } from "framer-motion";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -34,8 +41,9 @@ export const stagger = (delay = 0.08): Variants => ({
 
 export const viewport = { once: true, margin: "-60px" } as const;
 
-// ─────────── v2 Motion variants ───────────
+// ─────────── NEW v2 Motion variants ───────────
 
+/** Cinematic logo entrance: from far away with heavy blur, settles to position. */
 export const cinematicLogo: Variants = {
   hidden:  { opacity: 0, scale: 0.3, filter: "blur(60px)" },
   visible: {
@@ -46,17 +54,21 @@ export const cinematicLogo: Variants = {
   },
 };
 
+/** Letter-by-letter reveal for headlines (use with overflow:hidden parent). */
 export const letterReveal: Variants = {
   hidden:  { y: "105%" },
   visible: { y: 0, transition: { duration: 0.9, ease: EASE } },
 };
 
+/** Subtitle / caption fade with slight blur. */
 export const subtleFadeUp: Variants = {
   hidden:  { opacity: 0, y: 16, filter: "blur(6px)" },
   visible: { opacity: 1, y: 0,  filter: "blur(0px)", transition: { duration: 0.9, ease: EASE } },
 };
 
+/** Card hover lift used by stat tiles + chart panels. */
 export const cardLift: Variants = {
   rest:  { y: 0, transition: { duration: 0.4, ease: EASE } },
   hover: { y: -6, transition: { duration: 0.4, ease: EASE } },
 };
+

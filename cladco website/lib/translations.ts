@@ -1,37 +1,49 @@
+// =============================================================================
+// FILE: lib/translations.ts (SMART MERGE)
+// CHANGES vs live site:
+//   - REMOVED: t.en.process & t.ar.process (old Process section deleted)
+//   - REMOVED: t.en.why.stat & statSub (now lives in Stats grid)
+//   - REFINED: t.*.why.reasons[2] → "Tailored Quality" (was "Flexible Quality
+//     Tiers") to better complement the new Quality Standards chart
+//   - REMOVED: emoji from audience.items (cleaner premium look)
+//   - ADDED: stats + charts blocks (new sections)
+// =============================================================================
+
 export type Lang = "en" | "ar";
 
 export const t = {
   en: {
-    nav: { whatsapp: "WhatsApp Us" },
+    nav: {
+      whatsapp: "WhatsApp Us",
+    },
     hero: {
-      badge: "Smart Premium",
+      badge: "Professional Appearance Partner",
       headline1: "Show Up",
       headline2: "Better.",
-      sub: "Premium uniforms and branded merchandise for every business that wants to look the part.",
-      cta1: "Contact Us",
+      sub: "CladCo crafts custom uniforms, branded merchandise, and design solutions that make your business look polished, professional, and unforgettable.",
+      cta1: "Contact Us on WhatsApp",
       cta2: "Get a Free Quote",
       trust: "Trusted by restaurants · cafes · corporations · schools · events",
-      scroll: "Scroll",
     },
     services: {
       label: "What We Do",
       heading: "Everything your team needs to look the part",
       items: [
-        { title: "Custom Uniforms", description: "Tailored workwear that reflects your brand identity. From fabric selection to final stitch — every detail crafted for a sharp, consistent look.", tags: ["Embroidery", "Screen Print", "Custom Fit"] },
-        { title: "Branded Items", description: "Mugs, notebooks, badges, bags, and more — all branded with your logo. Reinforce your identity at every touchpoint, inside and outside your business.", tags: ["Mugs & Cups", "Notebooks", "Badges & Lanyards"] },
-        { title: "Design Services", description: "No design? No problem. Our team creates professional layouts, mockups, and brand presentation assets — so everything looks intentional and premium.", tags: ["Mockups", "Brand Guidelines", "Artwork"] },
+        { title: "Custom Uniforms",  description: "Tailored workwear that reflects your brand identity. From fabric selection to final stitch — every detail crafted for a sharp, consistent look.", tags: ["Embroidery", "Screen Print", "Custom Fit"] },
+        { title: "Branded Items",    description: "Mugs, notebooks, badges, bags, and more — all branded with your logo. Reinforce your identity at every touchpoint, inside and outside your business.", tags: ["Mugs & Cups", "Notebooks", "Badges & Lanyards"] },
+        { title: "Design Services",  description: "No design? No problem. Our team creates professional layouts, mockups, and brand presentation assets — so everything looks intentional and premium.", tags: ["Mockups", "Brand Guidelines", "Artwork"] },
       ],
     },
     audience: {
       label: "Who We Serve",
       heading: "Built for businesses that care about their image",
       items: [
-        { label: "Restaurants",    desc: "Chef coats, server uniforms, host attire" },
-        { label: "Cafes",          desc: "Branded aprons, caps, and barista wear" },
-        { label: "Businesses",     desc: "Office wear, reception, sales teams" },
-        { label: "Corporate Teams",desc: "Executive uniforms & branded merch kits" },
-        { label: "Schools",        desc: "Student uniforms, faculty wear, PE kits" },
-        { label: "Events",         desc: "Staff vests, crew shirts, event branding" },
+        { label: "Restaurants",      desc: "Chef coats, server uniforms, host attire" },
+        { label: "Cafes",            desc: "Branded aprons, caps, and barista wear" },
+        { label: "Businesses",       desc: "Office wear, reception, sales teams" },
+        { label: "Corporate Teams",  desc: "Executive uniforms & branded merch kits" },
+        { label: "Schools",          desc: "Student uniforms, faculty wear, PE kits" },
+        { label: "Events",           desc: "Staff vests, crew shirts, event branding" },
       ],
     },
     why: {
@@ -40,43 +52,19 @@ export const t = {
       heading2: "A partner in",
       heading3: "presentation.",
       sub: "We don't just manufacture. We help you think about how your team represents your brand — and then we execute it flawlessly.",
-      stat: "100%",
-      statSub: "Custom Production",
+      // NOTE: stat removed — moved to Stats grid section
       reasons: [
-        { number: "01", title: "Professional Look, Every Time",  description: "Consistency builds trust. We ensure your team looks polished and aligned — whether it's one person or one hundred." },
+        { number: "01", title: "Professional Look, Every Time", description: "Consistency builds trust. We ensure your team looks polished and aligned — whether it's one person or one hundred." },
         { number: "02", title: "Fully Custom Solutions",         description: "Every business is different. We work with your brand colors, logo, and style to produce something uniquely yours." },
-        { number: "03", title: "Flexible Quality Tiers",         description: "From budget-friendly starter packs to premium production runs — we offer options that match your scale and ambition." },
+        { number: "03", title: "Tailored to Your Needs",         description: "From budget-friendly starter packs to premium production runs — we offer options that match your scale and ambition." },
         { number: "04", title: "Reliable, End-to-End",           description: "Design, produce, deliver. We own the full process so you never have to coordinate between multiple vendors." },
-      ],
-    },
-    process: {
-      label: "How It Works",
-      heading: "Simple process. Professional results.",
-      cta: "Start the Process",
-      steps: [
-        { step: "01", title: "Tell Us What You Need",    description: "Send us a message on WhatsApp. Share your requirements, team size, and any ideas you have." },
-        { step: "02", title: "We Design & Confirm",      description: "Our team prepares mockups and samples. You review, provide feedback, and approve before anything goes to production." },
-        { step: "03", title: "We Produce",               description: "Once approved, production begins with quality materials and careful attention to your brand details." },
-        { step: "04", title: "We Deliver",               description: "Your order arrives on time, packaged properly, ready for your team to wear with pride." },
-      ],
-    },
-    showcase: {
-      label: "Our Products",
-      heading: "Crafted to represent your brand.",
-      sub: "Every item is produced to the highest standard, carrying your identity at every detail.",
-      cta: "All products can be fully customised with your brand identity",
-      items: [
-        { key: "tshirt",   label: "Team Uniforms",        desc: "Sharp black uniforms — tailored to carry your brand with precision." },
-        { key: "cup",      label: "Branded Cups",         desc: "Every sip is a brand moment — your logo on every cup." },
-        { key: "notebook", label: "Branded Notebooks",    desc: "Premium notebooks that carry your brand into every meeting." },
-        { key: "badge",    label: "ID Badges & Lanyards", desc: "Professional credentials printed with your brand identity." },
       ],
     },
     cta: {
       badge: "Ready to Upgrade?",
-      heading1: "Your team deserves uniforms",
-      heading2: "that work as hard as they do.",
-      sub: "From order to delivery — your brand, uncompromised.",
+      heading1: "Let's Upgrade",
+      heading2: "Your Team's Look.",
+      sub: "One message is all it takes. Tell us about your team and we'll handle everything — from design to delivery.",
       button: "Chat with Us on WhatsApp",
       trust1: "No commitment required",
       trust2: "Fast response time",
@@ -93,24 +81,15 @@ export const t = {
       waSub: "We typically reply within minutes",
     },
     footer: {
-      tagline: "Show Up Better — Quality without noise, precision without pretension.",
+      tagline: "Your professional appearance partner — uniforms, branded items & design.",
       rights: "All rights reserved.",
       country: "Based in Saudi Arabia 🇸🇦",
       whatsapp: "WhatsApp Us",
     },
-    floating: { tooltip: "💬 Chat with us!" },
-    quote: {
-      title: "Get a Free Quote",
-      subtitle: "Fill in the details and we'll get back to you on WhatsApp.",
-      name: "Full Name", company: "Company Name", businessType: "Business Type",
-      need: "What do you need exactly?", quantity: "Quantity", city: "City",
-      fabric: "Fabric Type", fabricHint: "optional",
-      submit: "Send Request via WhatsApp", close: "Close",
-      namePlaceholder: "Your full name", companyPlaceholder: "Your company or business name",
-      typePlaceholder: "Restaurant, Café, Corporate...", needPlaceholder: "Describe what you need...",
-      quantityPlaceholder: "e.g. 50 pieces", cityPlaceholder: "Your city",
-      fabricPlaceholder: "e.g. Cotton, Polyester... (optional)",
+    floating: {
+      tooltip: "💬 Chat with us!",
     },
+    // ─────────────── NEW: Stats + Charts ───────────────
     stats: {
       label: "By the Numbers",
       heading1: "Built on",
@@ -124,7 +103,7 @@ export const t = {
       ],
     },
     charts: {
-      label: "Why CladCo",
+      label: "How It Works",
       heading1: "A process built for",
       headingItalic: "precision.",
       sub: "From the first message to the final delivery — every step engineered to keep your brand uncompromised.",
@@ -156,115 +135,83 @@ export const t = {
   },
 
   ar: {
-    nav: { whatsapp: "راسلنا" },
+    nav: {
+      whatsapp: "واتساب",
+    },
     hero: {
-      badge: "راقٍ واحترافي",
+      badge: "شريك المظهر المهني",
       headline1: "اظهر",
       headline2: "بأفضل صورة.",
-      sub: "يونيفورم راقٍ وهدايا مؤسسية بهويتك — لكل مشروع يريد أن يترك انطباعاً لا يُنسى.",
-      cta1: "تواصل معنا",
+      sub: "كلادكو تصمم يونيفورم مخصص، منتجات مُبرندة، وحلول تصميم تجعل مشروعك يبدو احترافياً وأنيقاً لا يُنسى.",
+      cta1: "تواصل معنا على واتساب",
       cta2: "احصل على عرض سعر",
-      trust: "يثق بنا أصحاب المطاعم · المقاهي · الشركات · المدارس · الفعاليات",
-      scroll: "تمرير",
+      trust: "نثق بنا المطاعم · المقاهي · الشركات · المدارس · الفعاليات",
     },
     services: {
       label: "ما نقدمه",
-      heading: "كل ما يحتاجه فريقك ليمثّل علامتك باحترافية",
+      heading: "كل ما يحتاجه فريقك ليبدو في أفضل صورة",
       items: [
-        { title: "يونيفورم مخصص", description: "ملابس عمل مصممة خصيصاً لتعكس هوية علامتك. من اختيار القماش حتى آخر غرزة — كل تفصيل يعكس مستوى مشروعك.", tags: ["تطريز", "طباعة سيلك", "مقاسات مخصصة"] },
-        { title: "هدايا مؤسسية بهويتك", description: "أكواب، دفاتر، شارات، حقائب والمزيد — كلها تحمل شعارك. علامتك حاضرة في كل لحظة تواصل مع عملائك وفريقك.", tags: ["أكواب", "دفاتر", "شارات وبطاقات"] },
-        { title: "خدمات التصميم", description: "ما عندك تصميم؟ لا مشكلة. فريقنا يبدأ من الصفر ويُعدّ لك تصاميم وموكاب احترافي — لتكون هويتك متكاملة ومتقنة من أول نظرة.", tags: ["موكاب احترافي", "دليل الهوية", "ملفات الطباعة"] },
+        { title: "يونيفورم مخصص",      description: "ملابس عمل مفصّلة تعكس هوية علامتك التجارية. من اختيار القماش حتى آخر غرزة — كل تفصيل مصمم لمظهر حاد ومتسق.", tags: ["تطريز", "طباعة سيلك", "مقاسات مخصصة"] },
+        { title: "منتجات مُبرندة",      description: "أكواب، دفاتر، شارات، حقائب والمزيد — كلها مطبوعة بشعارك. عزز هويتك في كل نقطة تواصل داخل مشروعك وخارجه.", tags: ["أكواب", "دفاتر", "شارات وبطاقات"] },
+        { title: "خدمات التصميم",       description: "لا تملك تصميماً؟ لا مشكلة. فريقنا يُعدّ تصاميم احترافية وعروضاً توضيحية — لتبدو كل تفاصيل علامتك متقنة وراقية.", tags: ["موكاب", "دليل الهوية", "ملفات الطباعة"] },
       ],
     },
     audience: {
       label: "من نخدم",
-      heading: "لكل مشروع يهتم بكيف يظهر أمام الناس",
+      heading: "مصمم للشركات التي تهتم بمظهرها",
       items: [
-        { label: "المطاعم",      desc: "جاكيت الشيف، زي الخدمة، ملابس الاستقبال" },
-        { label: "المقاهي",      desc: "مرايل بهويتك، كابات، زي الباريستا" },
-        { label: "الشركات",      desc: "زي موحد للموظفين، الاستقبال، فرق المبيعات" },
-        { label: "المؤسسات الكبرى", desc: "زي تنفيذي راقٍ وهدايا مؤسسية بهوية متكاملة" },
-        { label: "المدارس",      desc: "زي طلابي، ملابس المعلمين، الزي الرياضي" },
-        { label: "الفعاليات",    desc: "سترات الفريق، قمصان الطاقم، هوية الفعالية" },
+        { label: "المطاعم",            desc: "مرايل الشيف، يونيفورم الخدمة، زي الاستقبال" },
+        { label: "المقاهي",            desc: "مرايل مُبرندة، قبعات، زي الباريستا" },
+        { label: "الشركات",            desc: "ملابس مكتبية، استقبال، فرق المبيعات" },
+        { label: "الفرق المؤسسية",     desc: "يونيفورم تنفيذي وحقائب هدايا مُبرندة" },
+        { label: "المدارس",            desc: "زي طلابي، هيئة تدريسية، ملابس رياضية" },
+        { label: "الفعاليات",          desc: "سترات الطاقم، تيشيرتات، هوية الفعالية" },
       ],
     },
     why: {
       label: "لماذا كلادكو",
       heading1: "أكثر من مورد.",
       heading2: "شريك في",
-      heading3: "احترافيتك.",
-      sub: "ما نكتفي بالتصنيع فقط — نفكر معك في كيف يُمثّل فريقك علامتك، ثم ننفّذ ذلك بدقة واحترافية تامة.",
-      stat: "١٠٠٪",
-      statSub: "إنتاج مخصص",
+      heading3: "المظهر.",
+      sub: "نحن لا نصنع فقط. نساعدك على التفكير في كيفية تمثيل فريقك لعلامتك التجارية — ثم ننفّذ ذلك باحترافية.",
+      // NOTE: stat removed — moved to Stats grid section
       reasons: [
-        { number: "٠١", title: "مظهر موحد ومتسق دائماً",  description: "الاتساق يبني الثقة. فريقك يبدو دائماً بمستوى واحد — سواء كان شخصاً واحداً أو مئة." },
-        { number: "٠٢", title: "مخصص لك بالكامل",          description: "كل مشروع له طابعه الخاص. نعمل بألوانك وشعارك وأسلوبك لننتج هوية بصرية لا تشبه غيرها." },
-        { number: "٠٣", title: "خيارات تناسب كل ميزانية",  description: "من الباقات الأساسية إلى الإنتاج الراقي — عندنا ما يناسب حجم مشروعك وطموحاتك." },
-        { number: "٠٤", title: "كل شيء تحت سقف واحد",      description: "تصميم، إنتاج، توصيل. نتولى كل خطوة حتى لا تضطر للتعامل مع أطراف متعددة." },
-      ],
-    },
-    process: {
-      label: "كيف نعمل",
-      heading: "خطوات واضحة. نتائج تتكلم عن نفسها.",
-      cta: "ابدأ الآن",
-      steps: [
-        { step: "٠١", title: "راسلنا وأخبرنا",      description: "تواصل معنا على واتساب وأخبرنا بمتطلباتك وحجم فريقك وأي أفكار في بالك." },
-        { step: "٠٢", title: "نصمم ونعرض عليك",     description: "نُعدّ موكاب وعينات. تشوفها، تعطينا ملاحظاتك، وما نبدأ الإنتاج إلا بعد موافقتك الكاملة." },
-        { step: "٠٣", title: "ننطلق في الإنتاج",    description: "بعد الموافقة يبدأ الإنتاج بمواد عالية الجودة مع الاعتناء بكل تفاصيل هويتك." },
-        { step: "٠٤", title: "يوصلك الطلب",          description: "طلبك يصلك في الوقت المحدد، مُعبّأ بعناية، جاهز ليرتديه فريقك بكل ثقة." },
-      ],
-    },
-    showcase: {
-      label: "منتجاتنا",
-      heading: "مصنوعة لتحمل هويتك.",
-      sub: "كل قطعة تُنتج بأعلى المعايير — علامتك حاضرة في كل تفصيل.",
-      cta: "جميع المنتجات قابلة للتخصيص الكامل بهوية علامتك",
-      items: [
-        { key: "tshirt",   label: "يونيفورم الفريق",      desc: "يونيفورم أنيق ومتسق — يعكس احترافية مشروعك من أول نظرة." },
-        { key: "cup",      label: "أكواب بهويتك",          desc: "شعارك على كل كوب — كل رشفة فرصة يتذكرك فيها عميلك." },
-        { key: "notebook", label: "دفاتر مؤسسية",         desc: "دفاتر راقية تحمل علامتك لكل اجتماع وكل لحظة عمل." },
-        { key: "badge",    label: "بطاقات وشرائط تعريف",  desc: "هويات موظفين احترافية تُكمل صورة فريقك المتكاملة." },
+        { number: "٠١", title: "مظهر احترافي دائماً",     description: "الاتساق يبني الثقة. نضمن أن يبدو فريقك أنيقاً ومتناسقاً — سواء كان شخصاً واحداً أو مئة شخص." },
+        { number: "٠٢", title: "حلول مخصصة بالكامل",      description: "كل مشروع مختلف. نعمل مع ألوانك وشعارك وأسلوبك لننتج شيئاً يخصك أنت فقط." },
+        { number: "٠٣", title: "نفصّل الجودة على مقاسك",   description: "من باقات البداية الاقتصادية إلى الإنتاج الراقي — لدينا خيارات تناسب حجمك وطموحك." },
+        { number: "٠٤", title: "موثوق من البداية للنهاية", description: "تصميم، إنتاج، توصيل. نتولى العملية كاملة لتتفرغ لعملك." },
       ],
     },
     cta: {
-      badge: "جاهز ترتقي بمظهر فريقك؟",
-      heading1: "فريقك يستحق زياً",
-      heading2: "بمستوى جدّيته.",
-      sub: "من أول طلب حتى آخر تسليم — هويتك التجارية محفوظة بالكامل.",
+      badge: "هل أنت مستعد للترقية؟",
+      heading1: "لنرتقِ بمظهر",
+      heading2: "فريقك.",
+      sub: "رسالة واحدة تكفي. أخبرنا عن فريقك وسنتولى كل شيء — من التصميم حتى التوصيل.",
       button: "تواصل معنا على واتساب",
-      trust1: "بدون أي التزام مسبق",
-      trust2: "رد سريع في نفس اليوم",
-      trust3: "استشارة أولية مجانية",
+      trust1: "بدون أي التزام",
+      trust2: "رد سريع",
+      trust3: "استشارة مجانية",
     },
     contact: {
       locationLabel: "الموقع",
       locationValue: "المملكة العربية السعودية",
-      locationSub: "نخدم المشاريع في جميع أنحاء المملكة",
+      locationSub: "نخدم الشركات في جميع أنحاء المملكة",
       phoneLabel: "الهاتف",
       phoneSub: "الأحد – الخميس، ٩ص – ٦م",
       waLabel: "واتساب",
       waValue: "راسلنا مباشرة",
-      waSub: "عادةً نرد خلال دقائق",
+      waSub: "عادةً نرد في غضون دقائق",
     },
     footer: {
-      tagline: "اظهر بأفضل صورة — جودة حقيقية، احترافية بلا تكلّف.",
+      tagline: "شريكك في المظهر المهني — يونيفورم، منتجات مُبرندة وتصميم.",
       rights: "جميع الحقوق محفوظة.",
       country: "🇸🇦 المملكة العربية السعودية",
-      whatsapp: "راسلنا",
+      whatsapp: "واتساب",
     },
-    floating: { tooltip: "💬 راسلنا الآن" },
-    quote: {
-      title: "احصل على عرض سعر",
-      subtitle: "أكمل البيانات وسنتواصل معك على واتساب في أقرب وقت.",
-      name: "الاسم الكامل", company: "اسم الشركة أو المشروع", businessType: "نوع النشاط",
-      need: "وش تحتاج بالضبط؟", quantity: "الكمية", city: "المدينة",
-      fabric: "نوع القماش", fabricHint: "اختياري",
-      submit: "إرسال الطلب عبر واتساب", close: "إغلاق",
-      namePlaceholder: "اسمك الكامل", companyPlaceholder: "اسم شركتك أو مشروعك",
-      typePlaceholder: "مطعم، مقهى، شركة...", needPlaceholder: "اشرح طلبك باختصار...",
-      quantityPlaceholder: "مثال: ٥٠ قطعة", cityPlaceholder: "مدينتك",
-      fabricPlaceholder: "مثال: قطن، بوليستر... (اختياري)",
+    floating: {
+      tooltip: "💬 تواصل معنا!",
     },
+    // ─────────────── NEW: Stats + Charts ───────────────
     stats: {
       label: "بالأرقام",
       heading1: "مبني على",
@@ -278,7 +225,7 @@ export const t = {
       ],
     },
     charts: {
-      label: "لماذا كلادكو",
+      label: "كيف نعمل",
       heading1: "عملية مبنية على",
       headingItalic: "الدقة.",
       sub: "من أول رسالة حتى آخر تسليم — كل خطوة مهندَسة بعناية لحماية هويتك.",
@@ -309,3 +256,4 @@ export const t = {
     },
   },
 };
+

@@ -1,34 +1,34 @@
+// =============================================================================
+// FILE: components/Hero.tsx (SMART MERGE)
+// CHANGES vs live site:
+//   - Cinematic 3-phase logo entrance (center → lift → settle)
+//   - Letter-by-letter headline reveal
+//   - Magnetic CTA buttons
+//   - Mouse-tracking gold/orange glow
+//   - Industry ticker at bottom
+//   - Scroll indicator without "Scroll" text
+//   - All translations + WhatsApp link preserved
+// NO external dependencies (HeroParticles/BrandMotif removed — were not in live site)
+// =============================================================================
+
 "use client";
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
-import HeroParticles from "./HeroParticles";
-import { BrandIconBg } from "./BrandMotif";
 
-const ease = [0.16, 1, 0.3, 1] as const;
 const QUOTE_URL = "https://cladco-requests.netlify.app/";
 
 export default function Hero() {
   const { lang } = useLang();
   const tr = t[lang].hero;
-  const logoControls = useAnimation();
   const heroRef = useRef<HTMLElement | null>(null);
   const glowRef = useRef<HTMLDivElement | null>(null);
   const logoWrapRef = useRef<HTMLDivElement | null>(null);
 
-  const pulseLogo = async () => {
-    await logoControls.start({
-      scale: [1, 1.1, 0.97, 1],
-      rotate: [0, 2, -1.5, 0],
-      transition: { duration: 0.55, ease },
-    });
-  };
-
-  // Mouse-tracking gold glow inside hero
+  // Mouse-tracking glow inside hero
   useEffect(() => {
     const hero = heroRef.current;
     const glow = glowRef.current;
@@ -38,11 +38,11 @@ export default function Hero() {
       glow.style.left = `${e.clientX - rect.left}px`;
       glow.style.top = `${e.clientY - rect.top}px`;
     };
-    hero.addEventListener("mousemove", onMove);
+    hero.addEventListener("mousemove", onMove, { passive: true });
     return () => hero.removeEventListener("mousemove", onMove);
   }, []);
 
-  // Add settled class AFTER both intro animations complete (3.9s)
+  // Add settled class after both intro animations finish (3.9s)
   useEffect(() => {
     const timer = setTimeout(() => {
       logoWrapRef.current?.classList.add("settled");
@@ -53,8 +53,7 @@ export default function Hero() {
   // Magnetic buttons
   useEffect(() => {
     const buttons = document.querySelectorAll<HTMLElement>("[data-magnetic]");
-    const handlers: { el: HTMLElement; move: (e: MouseEvent) => void; leave: () => void }[] = [];
-
+    const handlers: Array<{ el: HTMLElement; move: (e: MouseEvent) => void; leave: () => void }> = [];
     buttons.forEach((btn) => {
       const move = (e: MouseEvent) => {
         const rect = btn.getBoundingClientRect();
@@ -67,7 +66,6 @@ export default function Hero() {
       btn.addEventListener("mouseleave", leave);
       handlers.push({ el: btn, move, leave });
     });
-
     return () => {
       handlers.forEach(({ el, move, leave }) => {
         el.removeEventListener("mousemove", move);
@@ -79,90 +77,111 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: "#1C2B45" }}
+      className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
     >
+      {/* Subtle grid background (preserved from old hero) */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 50% at 50% -5%, rgba(154,139,110,0.10) 0%, transparent 60%)" }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
       />
-      <BrandIconBg size={700} opacity={0.12} variant="3d" animate />
+
+      {/* Static ambient glow */}
       <div
         className="absolute top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none hero-glow-pulse"
-        style={{ background: "radial-gradient(ellipse, rgba(154,139,110,0.06) 0%, transparent 60%)" }}
+        style={{ background: "radial-gradient(ellipse, rgba(194,65,12,0.06) 0%, transparent 60%)" }}
       />
 
-      {/* Mouse-tracking gold glow */}
+      {/* Mouse-tracking glow */}
       <div ref={glowRef} className="hero-mouse-glow" aria-hidden="true" />
 
-      <HeroParticles />
-
-      {/* Industry ticker */}
+      {/* Industry ticker at bottom */}
       <div
         className="absolute bottom-20 left-0 right-0 overflow-hidden pointer-events-none"
-        style={{ maskImage: "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.6) 12%, rgba(0,0,0,0.6) 88%, transparent 100%)" }}
+        style={{
+          maskImage:
+            "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.6) 12%, rgba(0,0,0,0.6) 88%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.6) 12%, rgba(0,0,0,0.6) 88%, transparent 100%)",
+        }}
       >
         <div className="ticker-track items-center py-2">
-          {["Restaurant","Café","Corporate","School","Hotel","Events","Retail","Clinic","Sports","Hospitality","Government","Agency",
-            "Restaurant","Café","Corporate","School","Hotel","Events","Retail","Clinic","Sports","Hospitality","Government","Agency"].map((label, i) => (
+          {[
+            "Restaurant", "Café", "Corporate", "School", "Hotel", "Events",
+            "Retail", "Clinic", "Sports", "Hospitality", "Government", "Agency",
+            "Restaurant", "Café", "Corporate", "School", "Hotel", "Events",
+            "Retail", "Clinic", "Sports", "Hospitality", "Government", "Agency",
+          ].map((label, i) => (
             <span key={i} className="inline-flex items-center gap-5 px-5">
-              <span className="text-[10px] font-semibold tracking-[0.22em] uppercase whitespace-nowrap" style={{ color: "rgba(154,139,110,0.4)", fontFamily: "Inter, system-ui, sans-serif" }}>{label}</span>
-              <span style={{ color: "rgba(154,139,110,0.18)", fontSize: 6 }}>◆</span>
+              <span
+                className="text-[10px] font-semibold tracking-[0.22em] uppercase whitespace-nowrap"
+                style={{ color: "rgba(194,65,12,0.4)", fontFamily: "Inter, system-ui, sans-serif" }}
+              >
+                {label}
+              </span>
+              <span style={{ color: "rgba(194,65,12,0.18)", fontSize: 6 }}>◆</span>
             </span>
           ))}
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-56 pointer-events-none" style={{ background: "linear-gradient(to top, #1C2B45, transparent)" }} />
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
 
-      {/* LOGO — absolutely positioned at viewport center, then lifts up via globals.css keyframes */}
-      <div
-        ref={logoWrapRef}
-        className="logo-cinematic"
-        style={{ pointerEvents: "auto" }}
-      >
-        <motion.div animate={logoControls} style={{ display: "block" }}>
-          <Image
-            src="/logo.png"
-            alt="CladCo"
-            width={3544}
-            height={3544}
-            className="w-full h-auto object-contain"
-            style={{ filter: "drop-shadow(0 0 40px rgba(154,139,110,0.15))" }}
-            priority
-          />
-        </motion.div>
+      {/* Top hairline */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#c2410c] to-transparent opacity-60" />
+
+      {/* ============================================================
+          LOGO — absolutely positioned, animates from center → top
+          ============================================================ */}
+      <div ref={logoWrapRef} className="logo-cinematic">
+        <Image
+          src="/logo.png"
+          alt="CladCo"
+          width={3544}
+          height={3544}
+          className="w-full h-auto object-contain mx-auto max-w-[400px]"
+          style={{ filter: "drop-shadow(0 0 40px rgba(194,65,12,0.15))" }}
+          priority
+        />
       </div>
 
-      {/* CONTENT — Headline + sub + CTAs appear after logo lifts up */}
-      <div className="hero-content-v2 relative max-w-5xl mx-auto px-5 md:px-8 text-center pb-16" style={{ zIndex: 10 }}>
-
+      {/* ============================================================
+          CONTENT — appears below logo after it lifts up (4.0s+)
+          ============================================================ */}
+      <div className="hero-content-v2 relative max-w-5xl mx-auto px-5 md:px-8 text-center pb-16 z-10">
         {/* Badge */}
-        <motion.div
-          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8"
-          style={{ border: "1px solid rgba(154,139,110,0.25)", background: "rgba(154,139,110,0.07)" }}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3.9, duration: 0.7, ease }}
+        <div
+          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 opacity-0 hero-fade"
+          style={{
+            border: "1px solid rgba(194,65,12,0.25)",
+            background: "rgba(194,65,12,0.07)",
+            animationDelay: "3.9s",
+          }}
         >
-          <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#9A8B6E" }} />
-          <span className="text-xs font-medium tracking-[0.22em] uppercase" style={{ color: "#9A8B6E", fontFamily: "Inter, system-ui, sans-serif" }}>{tr.badge}</span>
-        </motion.div>
+          <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#c2410c" }} />
+          <span
+            className="text-xs font-medium tracking-[0.22em] uppercase"
+            style={{ color: "#c2410c", fontFamily: "Inter, system-ui, sans-serif" }}
+          >
+            {tr.badge}
+          </span>
+        </div>
 
-        {/* Headline — letter-by-letter reveal (4.0s and 4.25s delays) */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[0.95] tracking-tight mb-8">
+        {/* Headline — letter-by-letter reveal */}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight mb-8">
           <span className="headline-mask">
-            <span
-              className="headline-inner block"
-              style={{ color: "#F9F8F6", animationDelay: "4s" }}
-            >
+            <span className="headline-inner block" style={{ color: "#ffffff", animationDelay: "4s" }}>
               {tr.headline1}
             </span>
           </span>
           <span className="headline-mask">
             <span
               className="headline-inner block"
-              style={{ color: "#9A8B6E", fontStyle: "italic", animationDelay: "4.25s" }}
+              style={{ color: "#c2410c", fontStyle: "italic", animationDelay: "4.25s" }}
             >
               {tr.headline2}
             </span>
@@ -170,30 +189,24 @@ export default function Hero() {
         </h1>
 
         {/* Sub */}
-        <motion.p
-          className="text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10 font-light"
-          style={{ color: "#AEADA9", fontFamily: "Inter, system-ui, sans-serif" }}
-          initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 4.7, duration: 0.9, ease }}
+        <p
+          className="text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10 font-light text-gray-400 opacity-0 hero-fade"
+          style={{ animationDelay: "4.7s" }}
         >
           {tr.sub}
-        </motion.p>
+        </p>
 
         {/* CTAs */}
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 5, duration: 0.7, ease }}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 opacity-0 hero-fade"
+          style={{ animationDelay: "5s" }}
         >
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-magnetic
-            className="btn-primary btn-magnetic btn-magnetic-primary text-sm w-full sm:w-auto justify-center gap-3"
-            onClick={pulseLogo}
+            className="btn-whatsapp btn-magnetic text-sm w-full sm:w-auto justify-center"
           >
             <WAIcon />
             {tr.cta1}
@@ -203,34 +216,28 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             data-magnetic
-            className="btn-outline btn-magnetic btn-magnetic-ghost text-sm w-full sm:w-auto justify-center"
-            onClick={pulseLogo}
+            className="btn-outline btn-magnetic text-sm w-full sm:w-auto justify-center"
           >
             {tr.cta2}
           </a>
-        </motion.div>
+        </div>
 
         {/* Trust line */}
-        <motion.p
-          className="mt-10 text-xs tracking-wider"
-          style={{ color: "#6E6E6A", fontFamily: "Inter, system-ui, sans-serif" }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 5.4, duration: 0.8 }}
+        <p
+          className="mt-10 text-xs tracking-wider text-gray-600 opacity-0 hero-fade"
+          style={{ animationDelay: "5.4s" }}
         >
           {tr.trust}
-        </motion.p>
+        </p>
       </div>
 
-      {/* Scroll indicator (line only) */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 5.7, duration: 0.8 }}
+      {/* Scroll indicator (line only, no text) */}
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 hero-fade"
+        style={{ animationDelay: "5.7s" }}
       >
         <div className="scroll-indicator-line" aria-hidden="true" />
-      </motion.div>
+      </div>
     </section>
   );
 }
@@ -242,3 +249,4 @@ function WAIcon() {
     </svg>
   );
 }
+
