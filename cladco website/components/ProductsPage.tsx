@@ -132,7 +132,7 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
     <div
       className="group relative flex flex-col overflow-hidden cursor-default"
       style={{
-        background: hovered ? "#1a1816" : "#F9F8F6",
+        background: hovered ? "#141414" : "#F9F8F6",
         border: `1px solid ${hovered ? "rgba(155,163,158,0.3)" : "#E2E1DE"}`,
         transition: "background 0.45s cubic-bezier(0.16,1,0.3,1), border-color 0.45s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease",
         transform: hovered ? "translateY(-6px)" : "translateY(0px)",
@@ -478,7 +478,7 @@ function ProcessStrip({ lang }: { lang: "en" | "ar" }) {
 
   return (
     <section
-      style={{ background: "#1a1816", borderTop: "1px solid rgba(155,163,158,0.12)" }}
+      style={{ background: "#141414", borderTop: "1px solid rgba(155,163,158,0.12)" }}
       dir={isAr ? "rtl" : "ltr"}
     >
       <motion.div

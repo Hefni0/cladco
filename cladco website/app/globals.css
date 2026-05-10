@@ -103,7 +103,7 @@
     @apply inline-flex items-center gap-2 border border-[#9BA39E] text-[#9BA39E] font-semibold
            px-7 py-3.5 rounded-full text-sm tracking-wide
            transition-all duration-200 ease-out
-           hover:bg-[#9BA39E] hover:text-[#1a1816] hover:scale-[1.02]
+           hover:bg-[#9BA39E] hover:text-[#141414] hover:scale-[1.02]
            active:scale-[0.98];
   }
 
@@ -118,7 +118,7 @@
 
   /* Section label */
   .section-label {
-    @apply text-xs font-semibold tracking-[0.2em] uppercase text-[#4A5240] mb-4;
+    @apply text-xs font-semibold tracking-[0.2em] uppercase text-[#9BA39E] mb-4;
   }
 
   /* Section heading */

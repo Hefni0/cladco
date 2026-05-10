@@ -37,7 +37,7 @@ export default function WhyCladCo() {
               <div
                 key={i}
                 className="p-6 grid grid-cols-[1fr_auto] gap-x-6 items-start group"
-                style={{ background: "#1a1816", border: "1px solid rgba(155,163,158,0.20)" }}
+                style={{ background: "#141414", border: "1px solid rgba(155,163,158,0.20)" }}
               >
                 <div className="min-w-0">
                   <h3 className="font-semibold mb-2 text-lg leading-snug" style={{ color: "#F9F8F6" }}>{r.title}</h3>

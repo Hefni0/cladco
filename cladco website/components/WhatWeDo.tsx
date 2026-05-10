@@ -23,7 +23,7 @@ export default function WhatWeDo() {
   const tr = t[lang].services;
 
   return (
-    <section id="services" className="py-28 md:py-36" style={{ background: "#1a1816" }}>
+    <section id="services" className="py-28 md:py-36" style={{ background: "#141414" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         <motion.div

@@ -333,7 +333,7 @@ export default function StatsAndCharts() {
   return (
     <>
       {/* ════════ Stats Section (light bg) ════════ */}
-      <section className="py-24 md:py-28 px-5 md:px-8" style={{ background: "#1a1816" }}>
+      <section className="py-24 md:py-28 px-5 md:px-8" style={{ background: "#141414" }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -371,7 +371,7 @@ export default function StatsAndCharts() {
                 variants={fadeUp}
                 className="p-8 lg:p-10 relative cursor-default"
                 style={{
-                  background: "#1C1C1A",
+                  background: "#1C1C1C",
                   border: "1px solid rgba(155,163,158,0.2)",
                 }}
               >
