@@ -14,12 +14,10 @@ import WhyCladCo from "@/components/WhyCladCo";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
     <>
-      <FloatingWhatsApp />
       <Navbar />
 
       <main>

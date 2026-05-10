@@ -34,14 +34,20 @@ export default function WhyCladCo() {
 
           <div className="space-y-0 divide-y divide-[#1e1e1e]">
             {tr.reasons.map((r, i) => (
-              <div key={i} className="py-8 flex gap-6 group">
-                <span className="text-xs font-bold text-[#2a2a2a] tracking-widest mt-1 min-w-[28px] group-hover:text-[#9A8B6E] transition-colors">
-                  {r.number}
-                </span>
-                <div>
-                  <h3 className="font-bold text-white mb-2 text-base">{r.title}</h3>
+              <div
+                key={i}
+                className="py-8 grid grid-cols-[1fr_auto] gap-x-6 items-start group"
+              >
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-white mb-2 text-lg leading-snug">{r.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{r.description}</p>
                 </div>
+                <span
+                  className="text-xs font-semibold tracking-[0.2em] text-[#3a3a3a] group-hover:text-[#9A8B6E] transition-colors mt-1 select-none"
+                  aria-hidden="true"
+                >
+                  {r.number}
+                </span>
               </div>
             ))}
           </div>

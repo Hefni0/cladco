@@ -56,17 +56,6 @@ export default function CTASection() {
           </motion.a>
         </motion.div>
 
-        <motion.div
-          variants={fadeUp}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-xs"
-          style={{ color: "rgba(154,139,110,0.5)", fontFamily: "Inter, system-ui, sans-serif" }}
-        >
-          <span className="flex items-center gap-2"><CheckIcon />{tr.trust1}</span>
-          <span className="hidden sm:block w-1 h-1 rounded-full" style={{ background: "rgba(154,139,110,0.25)" }} />
-          <span className="flex items-center gap-2"><CheckIcon />{tr.trust2}</span>
-          <span className="hidden sm:block w-1 h-1 rounded-full" style={{ background: "rgba(154,139,110,0.25)" }} />
-          <span className="flex items-center gap-2"><CheckIcon />{tr.trust3}</span>
-        </motion.div>
       </motion.div>
     </section>
   );
