@@ -19,7 +19,7 @@ export default function CTASection() {
         <motion.p
           variants={fadeUp}
           className="text-xs font-medium tracking-[0.26em] uppercase mb-5"
-          style={{ color: "#9A8B6E", fontFamily: "Inter, system-ui, sans-serif" }}
+          style={{ color: "#9BA39E", fontFamily: "Inter, system-ui, sans-serif" }}
         >
           {tr.badge}
         </motion.p>
@@ -31,7 +31,7 @@ export default function CTASection() {
         >
           {tr.heading1}
           <br />
-          <span style={{ color: "#9A8B6E" }}>{tr.heading2}</span>
+          <span style={{ color: "#4A5240" }}>{tr.heading2}</span>
         </motion.h2>
 
         <motion.p
@@ -47,7 +47,7 @@ export default function CTASection() {
             href={WHATSAPP_URL}
             target="_blank" rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-3 px-10 py-4 text-base"
-            style={{ border: "1px solid rgba(154,139,110,0.5)" }}
+            style={{ border: "1px solid rgba(155,163,158,0.5)" }}
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 380, damping: 22 }}

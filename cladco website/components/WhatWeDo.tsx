@@ -51,14 +51,14 @@ export default function WhatWeDo() {
                 }}
                 whileHover={{
                   y: -6,
-                  boxShadow: "0 20px 50px rgba(0,0,0,0.08), 0 4px 12px rgba(154,139,110,0.1)",
-                  borderColor: "rgba(154,139,110,0.35)",
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.08), 0 4px 12px rgba(155,163,158,0.1)",
+                  borderColor: "rgba(155,163,158,0.35)",
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 24 }}
               >
                 {/* Icon */}
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-7"
-                  style={{ background: "#F2F1EF", color: "#7a6d55" }}>
+                  style={{ background: "#F2F1EF", color: "#3A4030" }}>
                   {icons[i]}
                 </div>
 
@@ -72,7 +72,7 @@ export default function WhatWeDo() {
                 <div className="flex flex-wrap gap-1.5">
                   {service.tags.map((tag) => (
                     <span key={tag} className="text-xs font-medium px-3 py-1"
-                      style={{ background: "#F2F1EF", color: "#7a6d55", border: "1px solid #E2E1DE", borderRadius: 0 }}>
+                      style={{ background: "#F2F1EF", color: "#3A4030", border: "1px solid #E2E1DE", borderRadius: 0 }}>
                       {tag}
                     </span>
                   ))}

@@ -15,7 +15,7 @@ export default function WhyCladCo() {
   const tr = t[lang].why;
 
   return (
-    <section className="py-24 md:py-32" style={{ background: "#1C2B45" }}>
+    <section className="py-24 md:py-32" style={{ background: "#4A5240" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className="lg:sticky lg:top-28">
@@ -37,7 +37,7 @@ export default function WhyCladCo() {
               <div
                 key={i}
                 className="p-6 grid grid-cols-[1fr_auto] gap-x-6 items-start group"
-                style={{ background: "#1a1816", border: "1px solid rgba(154,139,110,0.20)" }}
+                style={{ background: "#1a1816", border: "1px solid rgba(155,163,158,0.20)" }}
               >
                 <div className="min-w-0">
                   <h3 className="font-semibold mb-2 text-lg leading-snug" style={{ color: "#F9F8F6" }}>{r.title}</h3>
@@ -45,7 +45,7 @@ export default function WhyCladCo() {
                 </div>
                 <span
                   className="text-xs font-semibold tracking-[0.2em] mt-1 select-none transition-colors"
-                  style={{ color: "#9A8B6E" }}
+                  style={{ color: "#9BA39E" }}
                   aria-hidden="true"
                 >
                   {r.number}

@@ -133,7 +133,7 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
       className="group relative flex flex-col overflow-hidden cursor-default"
       style={{
         background: hovered ? "#1a1816" : "#F9F8F6",
-        border: `1px solid ${hovered ? "rgba(154,139,110,0.3)" : "#E2E1DE"}`,
+        border: `1px solid ${hovered ? "rgba(155,163,158,0.3)" : "#E2E1DE"}`,
         transition: "background 0.45s cubic-bezier(0.16,1,0.3,1), border-color 0.45s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease",
         transform: hovered ? "translateY(-6px)" : "translateY(0px)",
         boxShadow: hovered ? "0 24px 60px rgba(28,43,69,0.18), 0 6px 20px rgba(0,0,0,0.08)" : "none",
@@ -172,7 +172,7 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
               className="font-display text-center leading-none select-none"
               style={{
                 fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-                color: hovered ? "rgba(154,139,110,0.22)" : "rgba(28,43,69,0.09)",
+                color: hovered ? "rgba(155,163,158,0.22)" : "rgba(28,43,69,0.09)",
                 letterSpacing: "-0.02em",
                 transition: "color 0.45s ease",
                 lineHeight: 1,
@@ -189,7 +189,7 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
           style={{
             fontSize: "0.65rem",
             letterSpacing: "0.22em",
-            color: hovered ? "rgba(154,139,110,0.6)" : "rgba(154,139,110,0.45)",
+            color: hovered ? "rgba(155,163,158,0.6)" : "rgba(155,163,158,0.45)",
             transition: "color 0.4s ease",
             fontFamily: "Inter, system-ui, sans-serif",
             fontWeight: 600,
@@ -208,7 +208,7 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
             fontFamily: "Inter, system-ui, sans-serif",
             fontWeight: 600,
             textTransform: "uppercase",
-            color: "#9A8B6E",
+            color: "#4A5240",
           }}
         >
           {label}
@@ -251,8 +251,8 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
                 fontWeight: 500,
                 textTransform: "uppercase",
                 padding: "3px 9px",
-                border: `1px solid ${hovered ? "rgba(154,139,110,0.3)" : "#E2E1DE"}`,
-                color: hovered ? "rgba(154,139,110,0.8)" : "#AEADA9",
+                border: `1px solid ${hovered ? "rgba(155,163,158,0.3)" : "#E2E1DE"}`,
+                color: hovered ? "rgba(155,163,158,0.8)" : "#AEADA9",
                 transition: "all 0.4s ease",
               }}
             >
@@ -267,7 +267,7 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
             style={{
               width: hovered ? 28 : 16,
               height: 1,
-              background: "#9A8B6E",
+              background: "#4A5240",
               transition: "width 0.35s ease",
             }}
           />
@@ -278,7 +278,7 @@ function CategoryCard({ cat, index, lang }: { cat: Category; index: number; lang
               fontFamily: "Inter, system-ui, sans-serif",
               fontWeight: 600,
               textTransform: "uppercase",
-              color: "#9A8B6E",
+              color: "#4A5240",
               opacity: hovered ? 1 : 0,
               transition: "opacity 0.35s ease",
             }}
@@ -333,8 +333,8 @@ function ProductsHero({ lang }: { lang: "en" | "ar" }) {
             transition={{ duration: 0.85, ease, delay: 0.1 }}
           >
             {isAr
-              ? <>{`كل اللي يحتاجه فريقك عشان `}<span style={{ color: "#9A8B6E" }}>يظهر بشكل احترافي</span>.</>
-              : <>{`Products that make your`}<br /><span style={{ color: "#9A8B6E" }}>brand</span>{` show up better.`}</>
+              ? <>{`كل اللي يحتاجه فريقك عشان `}<span style={{ color: "#4A5240" }}>يظهر بشكل احترافي</span>.</>
+              : <>{`Products that make your`}<br /><span style={{ color: "#4A5240" }}>brand</span>{` show up better.`}</>
             }
           </motion.h1>
 
@@ -478,7 +478,7 @@ function ProcessStrip({ lang }: { lang: "en" | "ar" }) {
 
   return (
     <section
-      style={{ background: "#1a1816", borderTop: "1px solid rgba(154,139,110,0.12)" }}
+      style={{ background: "#1a1816", borderTop: "1px solid rgba(155,163,158,0.12)" }}
       dir={isAr ? "rtl" : "ltr"}
     >
       <motion.div
@@ -496,7 +496,7 @@ function ProcessStrip({ lang }: { lang: "en" | "ar" }) {
                 className="font-display flex-shrink-0"
                 style={{
                   fontSize: "1.8rem",
-                  color: "rgba(154,139,110,0.25)",
+                  color: "rgba(155,163,158,0.25)",
                   letterSpacing: "-0.02em",
                   lineHeight: 1,
                 }}
@@ -524,7 +524,7 @@ function ProcessStrip({ lang }: { lang: "en" | "ar" }) {
                 style={{
                   width: 1,
                   height: 32,
-                  background: "rgba(154,139,110,0.15)",
+                  background: "rgba(155,163,158,0.15)",
                   flexShrink: 0,
                   margin: "0 2rem",
                 }}

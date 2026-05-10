@@ -12,7 +12,7 @@ export default function ContactSection() {
   const displayNumber = `+${WHATSAPP_NUMBER.slice(0, 3)} ${WHATSAPP_NUMBER.slice(3, 5)} ${WHATSAPP_NUMBER.slice(5, 8)} ${WHATSAPP_NUMBER.slice(8)}`;
 
   return (
-    <section className="py-20 md:py-24" style={{ background: "#1a1816", borderTop: "1px solid rgba(154,139,110,0.2)" }}>
+    <section className="py-20 md:py-24" style={{ background: "#1a1816", borderTop: "1px solid rgba(155,163,158,0.2)" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
@@ -20,7 +20,7 @@ export default function ContactSection() {
         >
 
           <motion.div variants={fadeUp} className="flex gap-4">
-            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(154,139,110,0.2)", color: "#9A8B6E" }}>
+            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(155,163,158,0.2)", color: "#9BA39E" }}>
               <LocationIcon />
             </div>
             <div>
@@ -31,7 +31,7 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex gap-4">
-            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(154,139,110,0.2)", color: "#9A8B6E" }}>
+            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(155,163,158,0.2)", color: "#9BA39E" }}>
               <PhoneIcon />
             </div>
             <div>
@@ -40,7 +40,7 @@ export default function ContactSection() {
                 href={`tel:+${WHATSAPP_NUMBER}`}
                 className="text-sm font-semibold"
                 style={{ color: "#F9F8F6" }}
-                whileHover={{ color: "#9A8B6E" } as never}
+                whileHover={{ color: "#9BA39E" } as never}
                 transition={{ duration: 0.2 }}
               >
                 {displayNumber}
@@ -50,7 +50,7 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex gap-4">
-            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(154,139,110,0.2)", color: "#25d366" }}>
+            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(155,163,158,0.2)", color: "#25d366" }}>
               <WAIcon />
             </div>
             <div>

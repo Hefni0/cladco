@@ -13,7 +13,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ background: "#0a0a0a", borderTop: "1px solid rgba(154,139,110,0.15)" }}>
+    <footer className="text-white relative overflow-hidden" style={{ background: "#0a0a0a", borderTop: "1px solid rgba(155,163,158,0.15)" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-12">
 
         <motion.div
@@ -31,7 +31,7 @@ export default function Footer() {
             >
               <Image src="/logo.png" alt="CladCo" width={220} height={80} className="object-contain h-14 w-auto" />
             </motion.div>
-            <p className="keep-latin text-xs tracking-[0.18em] uppercase" style={{ color: "#9A8B6E", fontFamily: "Inter, system-ui, sans-serif" }}>Show Up Better</p>
+            <p className="keep-latin text-xs tracking-[0.18em] uppercase" style={{ color: "#4A5240", fontFamily: "Inter, system-ui, sans-serif" }}>Show Up Better</p>
           </motion.div>
 
           {/* WhatsApp button */}
@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <motion.div
           className="mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
-          style={{ borderTop: "1px solid rgba(154,139,110,0.1)", color: "#AEADA9", fontFamily: "Inter, system-ui, sans-serif" }}
+          style={{ borderTop: "1px solid rgba(155,163,158,0.1)", color: "#AEADA9", fontFamily: "Inter, system-ui, sans-serif" }}
           variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
         >
           <p>© {year} CladCo. {tr.rights}</p>

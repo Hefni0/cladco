@@ -96,8 +96,8 @@ function JourneyChart({ stages, disclaimer }: {
       >
         <defs>
           <linearGradient id="journeyGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#9A8B6E" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#9A8B6E" stopOpacity="0" />
+            <stop offset="0%" stopColor="#4A5240" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#4A5240" stopOpacity="0" />
           </linearGradient>
           <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="2" result="b" />
@@ -285,7 +285,7 @@ function QualityChart({
           <motion.div
             key={i}
             className="grid grid-cols-[auto_1fr_auto] gap-5 items-center py-4"
-            style={{ borderBottom: i < items.length - 1 ? "1px solid rgba(154,139,110,0.08)" : "none" }}
+            style={{ borderBottom: i < items.length - 1 ? "1px solid rgba(155,163,158,0.08)" : "none" }}
             initial={{ opacity: 0, x: 20 }}
             animate={active ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
             transition={{ duration: 0.6, delay: 0.4 + i * 0.1, ease }}
@@ -359,7 +359,7 @@ export default function StatsAndCharts() {
 
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-y"
-            style={{ borderColor: "rgba(154,139,110,0.18)" }}
+            style={{ borderColor: "rgba(155,163,158,0.18)" }}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
@@ -372,14 +372,14 @@ export default function StatsAndCharts() {
                 className="p-8 lg:p-10 relative cursor-default"
                 style={{
                   background: "#1C1C1A",
-                  border: "1px solid rgba(154,139,110,0.2)",
+                  border: "1px solid rgba(155,163,158,0.2)",
                 }}
               >
                 <div
                   className="font-display mb-4 leading-none"
                   style={{
                     fontSize: it.display ? "clamp(1.6rem, 3vw, 2.4rem)" : "clamp(2.5rem, 5vw, 4rem)",
-                    color: "#9A8B6E",
+                    color: "#4A5240",
                     fontWeight: 600,
                   }}
                 >

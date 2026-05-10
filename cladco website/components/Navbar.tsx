@@ -66,14 +66,14 @@ export default function Navbar() {
             <motion.a
               href="/"
               style={{ fontSize: "0.7rem", letterSpacing: "0.18em", fontFamily: "Inter, system-ui, sans-serif", fontWeight: 600, textTransform: "uppercase", color: "#AEADA9" }}
-              whileHover={{ color: "#9A8B6E", y: -1 } as never}
+              whileHover={{ color: "#9BA39E", y: -1 } as never}
               transition={{ duration: 0.18 }}
             >
               {isAr ? "الرئيسية" : "Home"}
             </motion.a>
             <motion.a
               href="/products"
-              style={{ fontSize: "0.7rem", letterSpacing: "0.18em", fontFamily: "Inter, system-ui, sans-serif", fontWeight: 600, textTransform: "uppercase", color: "#9A8B6E" }}
+              style={{ fontSize: "0.7rem", letterSpacing: "0.18em", fontFamily: "Inter, system-ui, sans-serif", fontWeight: 600, textTransform: "uppercase", color: "#9BA39E" }}
               whileHover={{ color: "#F9F8F6", y: -1 } as never}
               transition={{ duration: 0.18 }}
             >
@@ -88,7 +88,7 @@ export default function Navbar() {
               onClick={toggle}
               className="flex items-center gap-1.5 border border-[#3A3A38] rounded-full px-4 py-2 text-xs font-medium tracking-[0.18em] uppercase"
               style={{ color: "#6E6E6A", fontFamily: "Inter, system-ui, sans-serif" }}
-              whileHover={{ borderColor: "#9A8B6E", color: "#9A8B6E" } as never}
+              whileHover={{ borderColor: "#9BA39E", color: "#9BA39E" } as never}
               whileTap={{ scale: 0.96 }}
               transition={{ duration: 0.18 }}
               aria-label="Toggle language"
@@ -120,17 +120,17 @@ export default function Navbar() {
               aria-label="Open menu"
             >
               <motion.span
-                style={{ width: 22, height: 1.5, background: menuOpen ? "#9A8B6E" : "#AEADA9", display: "block" }}
+                style={{ width: 22, height: 1.5, background: menuOpen ? "#9BA39E" : "#AEADA9", display: "block" }}
                 animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 6.5 : 0 }}
                 transition={{ duration: 0.25, ease }}
               />
               <motion.span
-                style={{ width: 22, height: 1.5, background: menuOpen ? "#9A8B6E" : "#AEADA9", display: "block" }}
+                style={{ width: 22, height: 1.5, background: menuOpen ? "#9BA39E" : "#AEADA9", display: "block" }}
                 animate={{ opacity: menuOpen ? 0 : 1 }}
                 transition={{ duration: 0.2 }}
               />
               <motion.span
-                style={{ width: 22, height: 1.5, background: menuOpen ? "#9A8B6E" : "#AEADA9", display: "block" }}
+                style={{ width: 22, height: 1.5, background: menuOpen ? "#9BA39E" : "#AEADA9", display: "block" }}
                 animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -6.5 : 0 }}
                 transition={{ duration: 0.25, ease }}
               />
@@ -146,7 +146,7 @@ export default function Navbar() {
             className="md:hidden fixed top-20 left-0 right-0 z-40 overflow-hidden"
             style={{
               background: "#1a1816",
-              borderBottom: "1px solid rgba(154,139,110,0.15)",
+              borderBottom: "1px solid rgba(155,163,158,0.15)",
             }}
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,13 +171,13 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className="py-3 text-sm font-semibold tracking-widest uppercase"
-                  style={{ color: "#AEADA9", fontFamily: "Inter, system-ui, sans-serif", borderBottom: "1px solid rgba(154,139,110,0.1)", letterSpacing: "0.18em" }}
+                  style={{ color: "#AEADA9", fontFamily: "Inter, system-ui, sans-serif", borderBottom: "1px solid rgba(155,163,158,0.1)", letterSpacing: "0.18em" }}
                   onClick={() => setMenuOpen(false)}
                   variants={{
                     hidden: { opacity: 0, x: -10 },
                     visible: { opacity: 1, x: 0, transition: { duration: 0.3, ease } },
                   }}
-                  whileHover={{ color: "#9A8B6E" } as never}
+                  whileHover={{ color: "#9BA39E" } as never}
                 >
                   {link.label}
                 </motion.a>

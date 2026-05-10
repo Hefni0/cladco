@@ -89,7 +89,7 @@ export default function Hero() {
       {/* Static ambient glow */}
       <div
         className="absolute top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none hero-glow-pulse"
-        style={{ background: "radial-gradient(ellipse, rgba(154,139,110,0.06) 0%, transparent 60%)" }}
+        style={{ background: "radial-gradient(ellipse, rgba(155,163,158,0.06) 0%, transparent 60%)" }}
       />
 
       {/* Mouse-tracking glow */}
@@ -115,11 +115,11 @@ export default function Hero() {
             <span key={i} className="inline-flex items-center gap-5 px-5">
               <span
                 className="text-[10px] font-semibold tracking-[0.22em] uppercase whitespace-nowrap"
-                style={{ color: "rgba(154,139,110,0.4)", fontFamily: "Inter, system-ui, sans-serif" }}
+                style={{ color: "rgba(155,163,158,0.4)", fontFamily: "Inter, system-ui, sans-serif" }}
               >
                 {label}
               </span>
-              <span style={{ color: "rgba(154,139,110,0.18)", fontSize: 6 }}>◆</span>
+              <span style={{ color: "rgba(155,163,158,0.18)", fontSize: 6 }}>◆</span>
             </span>
           ))}
         </div>
@@ -129,7 +129,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
 
       {/* Top hairline */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#9A8B6E] to-transparent opacity-60" />
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#9BA39E] to-transparent opacity-60" />
 
       {/* ============================================================
           LOGO — absolutely positioned, animates from center → top
@@ -141,7 +141,7 @@ export default function Hero() {
           width={3544}
           height={3544}
           className="w-full h-auto object-contain mx-auto max-w-[400px]"
-          style={{ filter: "drop-shadow(0 0 40px rgba(154,139,110,0.15))" }}
+          style={{ filter: "drop-shadow(0 0 40px rgba(155,163,158,0.15))" }}
           priority
         />
       </div>
@@ -154,15 +154,15 @@ export default function Hero() {
         <div
           className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 opacity-0 hero-fade"
           style={{
-            border: "1px solid rgba(154,139,110,0.25)",
-            background: "rgba(154,139,110,0.07)",
+            border: "1px solid rgba(155,163,158,0.25)",
+            background: "rgba(155,163,158,0.07)",
             animationDelay: "3.9s",
           }}
         >
-          <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#9A8B6E" }} />
+          <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#9BA39E" }} />
           <span
             className="text-xs font-medium tracking-[0.22em] uppercase"
-            style={{ color: "#9A8B6E", fontFamily: "Inter, system-ui, sans-serif" }}
+            style={{ color: "#9BA39E", fontFamily: "Inter, system-ui, sans-serif" }}
           >
             {tr.badge}
           </span>
@@ -178,7 +178,7 @@ export default function Hero() {
           <span className="headline-mask">
             <span
               className="headline-inner block"
-              style={{ color: "#9A8B6E", fontStyle: "italic", animationDelay: "4.25s" }}
+              style={{ color: "#9BA39E", fontStyle: "italic", animationDelay: "4.25s" }}
             >
               Better.
             </span>

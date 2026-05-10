@@ -42,9 +42,14 @@
 
 /* ─── Brand colour tokens (added for new sections) ─── */
 :root {
-  --champagne:        #9A8B6E;
-  --champagne-bright: #B8A687;
-  --champagne-dark:   #7a6d55;
+  /* Pewter — everyday accent (silvery, replaces what champagne was doing) */
+  --champagne:        #9BA39E;
+  --champagne-bright: #B5BBB7;
+  --champagne-dark:   #7E867F;
+  /* Deep Olive — used SELECTIVELY for the wow moments (button fills, big numbers, WhyCladCo bg) */
+  --olive:            #4A5240;
+  --olive-dark:       #3A4030;
+  --olive-bright:     #7B8467;
   --black:            #0a0a0a;
   --white:            #ffffff;
 }
@@ -83,36 +88,37 @@
 }
 
 @layer components {
-  /* Primary CTA — dark champagne */
-  .btn-whatsapp {
-    @apply inline-flex items-center gap-2.5 bg-[#9A8B6E] text-white font-semibold
+  /* Primary CTA — Deep Olive (the wow accent) */
+  .btn-whatsapp,
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 bg-[#4A5240] text-white font-semibold
            px-7 py-3.5 rounded-full text-sm tracking-wide
            transition-all duration-200 ease-out
-           hover:bg-[#7a6d55] hover:scale-[1.02] hover:shadow-lg hover:shadow-amber-900/30
+           hover:bg-[#3A4030] hover:scale-[1.02] hover:shadow-lg
            active:scale-[0.98];
   }
 
-  /* Secondary outlined button */
+  /* Secondary outlined button — Pewter */
   .btn-outline {
-    @apply inline-flex items-center gap-2 border border-[#9A8B6E] text-[#9A8B6E] font-semibold
+    @apply inline-flex items-center gap-2 border border-[#9BA39E] text-[#9BA39E] font-semibold
            px-7 py-3.5 rounded-full text-sm tracking-wide
            transition-all duration-200 ease-out
-           hover:bg-[#9A8B6E] hover:text-white hover:scale-[1.02]
+           hover:bg-[#9BA39E] hover:text-[#1a1816] hover:scale-[1.02]
            active:scale-[0.98];
   }
 
   /* Light button for dark sections */
   .btn-light {
-    @apply inline-flex items-center gap-2.5 bg-[#9A8B6E] text-white font-semibold
+    @apply inline-flex items-center gap-2.5 bg-[#4A5240] text-white font-semibold
            px-7 py-3.5 rounded-full text-sm tracking-wide
            transition-all duration-200 ease-out
-           hover:bg-[#7a6d55] hover:scale-[1.02] hover:shadow-lg
+           hover:bg-[#3A4030] hover:scale-[1.02] hover:shadow-lg
            active:scale-[0.98];
   }
 
   /* Section label */
   .section-label {
-    @apply text-xs font-semibold tracking-[0.2em] uppercase text-[#9A8B6E] mb-4;
+    @apply text-xs font-semibold tracking-[0.2em] uppercase text-[#4A5240] mb-4;
   }
 
   /* Section heading */
@@ -134,7 +140,7 @@
 }
 .card-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(154, 139, 110, 0.15);
+  box-shadow: 0 12px 40px rgba(155, 163, 158, 0.15);
 }
 
 /* Floating WhatsApp pulse ring */
@@ -170,7 +176,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: drop-shadow(0 0 6px rgba(154, 139, 110, 0.45));
+  filter: drop-shadow(0 0 6px rgba(155, 163, 158, 0.45));
   /* IMPORTANT: only width/height/opacity transition — never transform */
   transition: width 0.25s cubic-bezier(0.16,1,0.3,1),
               height 0.25s cubic-bezier(0.16,1,0.3,1),
@@ -180,7 +186,7 @@
 .logo-cursor.interactive {
   width: 36px;
   height: 36px;
-  filter: drop-shadow(0 0 12px rgba(154, 139, 110, 0.7));
+  filter: drop-shadow(0 0 12px rgba(155, 163, 158, 0.7));
 }
 .logo-cursor.clicking {
   width: 18px;
@@ -259,7 +265,7 @@
 /* ── HERO: scroll line indicator (no text) ── */
 .scroll-indicator-line {
   width: 1px; height: 40px;
-  background: linear-gradient(to bottom, transparent, rgba(154,139,110,0.6));
+  background: linear-gradient(to bottom, transparent, rgba(155,163,158,0.6));
   position: relative;
   overflow: hidden;
 }
@@ -288,7 +294,7 @@
   position: absolute;
   width: 500px; height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(154,139,110,0.06) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(155,163,158,0.06) 0%, transparent 60%);
   pointer-events: none;
   transform: translate(-50%, -50%);
   filter: blur(25px);
@@ -327,14 +333,14 @@
   position: absolute;
   top: 0; left: 50%;
   width: 1px; height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(154,139,110,0.08), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(155,163,158,0.08), transparent);
   pointer-events: none;
 }
 
 .chart-tabs-wrap {
   display: inline-flex;
-  border: 1px solid rgba(154,139,110,0.18);
-  background: rgba(154,139,110,0.03);
+  border: 1px solid rgba(155,163,158,0.18);
+  background: rgba(155,163,158,0.03);
   position: relative;
   isolation: isolate;
 }
@@ -366,13 +372,13 @@
 }
 
 /* Journey chart styles */
-.journey-axis-line { stroke: rgba(154,139,110,0.18); stroke-width: 1; stroke-dasharray: 2 4; }
+.journey-axis-line { stroke: rgba(155,163,158,0.18); stroke-width: 1; stroke-dasharray: 2 4; }
 .journey-progress-line {
   stroke: var(--champagne);
   stroke-width: 2.5;
   fill: none;
   stroke-linecap: round;
-  filter: drop-shadow(0 0 6px rgba(154,139,110,0.3));
+  filter: drop-shadow(0 0 6px rgba(155,163,158,0.3));
 }
 .journey-area { fill: url(#journeyGradient); }
 .journey-node { fill: var(--black); stroke: var(--champagne); stroke-width: 2; }
@@ -400,15 +406,15 @@
 }
 
 /* Quality radar chart */
-.radar-grid { fill: none; stroke: rgba(154,139,110,0.12); stroke-width: 1; }
-.radar-grid-active { stroke: rgba(154,139,110,0.25); }
-.radar-axis { stroke: rgba(154,139,110,0.15); stroke-width: 1; }
+.radar-grid { fill: none; stroke: rgba(155,163,158,0.12); stroke-width: 1; }
+.radar-grid-active { stroke: rgba(155,163,158,0.25); }
+.radar-axis { stroke: rgba(155,163,158,0.15); stroke-width: 1; }
 .radar-shape {
-  fill: rgba(154,139,110,0.18);
+  fill: rgba(155,163,158,0.18);
   stroke: var(--champagne);
   stroke-width: 2;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 12px rgba(154,139,110,0.3));
+  filter: drop-shadow(0 0 12px rgba(155,163,158,0.3));
 }
 .radar-point {
   fill: var(--champagne);
@@ -432,7 +438,7 @@
 .quality-bar-track {
   width: 80px;
   height: 4px;
-  background: rgba(154,139,110,0.15);
+  background: rgba(155,163,158,0.15);
   position: relative;
   overflow: hidden;
 }

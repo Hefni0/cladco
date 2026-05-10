@@ -27,9 +27,9 @@ export default function WhoItsFor() {
           {tr.items.map((item, i) => (
             <div
               key={i}
-              className="card-lift bg-[#F9F8F6] border border-[#E2E1DE] hover:border-[#9A8B6E]/40 rounded-2xl p-6 md:p-8 flex flex-col gap-3 group"
+              className="card-lift bg-[#F9F8F6] border border-[#E2E1DE] hover:border-[#9BA39E]/40 rounded-2xl p-6 md:p-8 flex flex-col gap-3 group"
             >
-              <span className="text-xs font-bold text-[#9A8B6E] tracking-widest group-hover:text-[#9A8B6E] transition-colors">
+              <span className="text-xs font-bold text-[#9BA39E] tracking-widest group-hover:text-[#9BA39E] transition-colors">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
