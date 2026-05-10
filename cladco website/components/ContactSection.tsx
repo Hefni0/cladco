@@ -12,7 +12,7 @@ export default function ContactSection() {
   const displayNumber = `+${WHATSAPP_NUMBER.slice(0, 3)} ${WHATSAPP_NUMBER.slice(3, 5)} ${WHATSAPP_NUMBER.slice(5, 8)} ${WHATSAPP_NUMBER.slice(8)}`;
 
   return (
-    <section className="py-20 md:py-24" style={{ background: "#F9F8F6", borderTop: "1px solid #E2E1DE" }}>
+    <section className="py-20 md:py-24" style={{ background: "#1a1816", borderTop: "1px solid rgba(154,139,110,0.2)" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
@@ -20,53 +20,53 @@ export default function ContactSection() {
         >
 
           <motion.div variants={fadeUp} className="flex gap-4">
-            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#F2F1EF", border: "1px solid #E2E1DE", color: "#9A8B6E" }}>
+            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(154,139,110,0.2)", color: "#9A8B6E" }}>
               <LocationIcon />
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#AEADA9" }}>{tr.locationLabel}</p>
-              <p className="text-sm font-semibold" style={{ color: "#0C0C0B" }}>{tr.locationValue}</p>
-              <p className="text-xs mt-0.5" style={{ color: "#6E6E6A" }}>{tr.locationSub}</p>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "rgba(249,248,246,0.55)" }}>{tr.locationLabel}</p>
+              <p className="text-sm font-semibold" style={{ color: "#F9F8F6" }}>{tr.locationValue}</p>
+              <p className="text-xs mt-0.5" style={{ color: "rgba(249,248,246,0.55)" }}>{tr.locationSub}</p>
             </div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex gap-4">
-            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#F2F1EF", border: "1px solid #E2E1DE", color: "#9A8B6E" }}>
+            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(154,139,110,0.2)", color: "#9A8B6E" }}>
               <PhoneIcon />
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#AEADA9" }}>{tr.phoneLabel}</p>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "rgba(249,248,246,0.55)" }}>{tr.phoneLabel}</p>
               <motion.a
                 href={`tel:+${WHATSAPP_NUMBER}`}
                 className="text-sm font-semibold"
-                style={{ color: "#0C0C0B" }}
+                style={{ color: "#F9F8F6" }}
                 whileHover={{ color: "#9A8B6E" } as never}
                 transition={{ duration: 0.2 }}
               >
                 {displayNumber}
               </motion.a>
-              <p className="text-xs mt-0.5" style={{ color: "#6E6E6A" }}>{tr.phoneSub}</p>
+              <p className="text-xs mt-0.5" style={{ color: "rgba(249,248,246,0.55)" }}>{tr.phoneSub}</p>
             </div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex gap-4">
-            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5 text-[#25d366]" style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}>
+            <div className="w-10 h-10 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "#1C1C1A", border: "1px solid rgba(154,139,110,0.2)", color: "#25d366" }}>
               <WAIcon />
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#AEADA9" }}>{tr.waLabel}</p>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "rgba(249,248,246,0.55)" }}>{tr.waLabel}</p>
               <motion.a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-semibold"
-                style={{ color: "#0C0C0B" }}
-                whileHover={{ color: "#16a34a" } as never}
+                style={{ color: "#F9F8F6" }}
+                whileHover={{ color: "#25d366" } as never}
                 transition={{ duration: 0.2 }}
               >
                 {tr.waValue}
               </motion.a>
-              <p className="text-xs mt-0.5" style={{ color: "#6E6E6A" }}>{tr.waSub}</p>
+              <p className="text-xs mt-0.5" style={{ color: "rgba(249,248,246,0.55)" }}>{tr.waSub}</p>
             </div>
           </motion.div>
 

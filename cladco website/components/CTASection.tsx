@@ -11,7 +11,7 @@ export default function CTASection() {
   const tr = t[lang].cta;
 
   return (
-    <section className="py-28 md:py-40" style={{ background: "#111111" }}>
+    <section className="py-28 md:py-40" style={{ background: "#0a0a0a" }}>
       <motion.div
         className="max-w-4xl mx-auto px-5 md:px-8 text-center"
         variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewport}
@@ -47,6 +47,7 @@ export default function CTASection() {
             href={WHATSAPP_URL}
             target="_blank" rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-3 px-10 py-4 text-base"
+            style={{ border: "1px solid rgba(154,139,110,0.5)" }}
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 380, damping: 22 }}

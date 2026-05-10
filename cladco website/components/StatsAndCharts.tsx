@@ -371,14 +371,15 @@ export default function StatsAndCharts() {
                 variants={fadeUp}
                 className="p-8 lg:p-10 relative cursor-default"
                 style={{
-                  borderRight: "1px solid rgba(154,139,110,0.18)",
+                  background: "#1C1C1A",
+                  border: "1px solid rgba(154,139,110,0.2)",
                 }}
               >
                 <div
                   className="font-display mb-4 leading-none"
                   style={{
                     fontSize: it.display ? "clamp(1.6rem, 3vw, 2.4rem)" : "clamp(2.5rem, 5vw, 4rem)",
-                    color: "#ffffff",
+                    color: "#9A8B6E",
                     fontWeight: 600,
                   }}
                 >
