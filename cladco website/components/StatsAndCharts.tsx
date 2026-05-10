@@ -377,11 +377,16 @@ export default function StatsAndCharts() {
                 <div
                   className="font-display mb-4 leading-none"
                   style={{
-                    fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                    fontSize: it.display ? "clamp(1.6rem, 3vw, 2.4rem)" : "clamp(2.5rem, 5vw, 4rem)",
                     color: "#ffffff",
+                    fontWeight: 600,
                   }}
                 >
-                  <AnimatedCounter to={it.num} suffix={it.suffix} />
+                  {it.display ? (
+                    <span>{it.display}</span>
+                  ) : (
+                    <AnimatedCounter to={it.num} suffix={it.suffix} />
+                  )}
                 </div>
                 <div
                   className="text-xs font-semibold tracking-[0.22em] uppercase mb-2"

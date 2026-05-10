@@ -168,11 +168,11 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Headline — letter-by-letter reveal */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight mb-8">
+        {/* Headline — "Show Up Better" — kept in English in both languages (CladCo slogan) */}
+        <h1 className="keep-latin text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight mb-8">
           <span className="headline-mask">
             <span className="headline-inner block" style={{ color: "#ffffff", animationDelay: "4s" }}>
-              {tr.headline1}
+              Show Up
             </span>
           </span>
           <span className="headline-mask">
@@ -180,7 +180,7 @@ export default function Hero() {
               className="headline-inner block"
               style={{ color: "#9A8B6E", fontStyle: "italic", animationDelay: "4.25s" }}
             >
-              {tr.headline2}
+              Better.
             </span>
           </span>
         </h1>

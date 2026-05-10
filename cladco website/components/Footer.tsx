@@ -31,7 +31,7 @@ export default function Footer() {
             >
               <Image src="/logo.png" alt="CladCo" width={220} height={80} className="object-contain h-14 w-auto" />
             </motion.div>
-            <p className="text-xs max-w-xs" style={{ color: "#AEADA9", fontFamily: "Inter, system-ui, sans-serif" }}>{tr.tagline}</p>
+            <p className="keep-latin text-xs tracking-[0.18em] uppercase" style={{ color: "#9A8B6E", fontFamily: "Inter, system-ui, sans-serif" }}>Show Up Better</p>
           </motion.div>
 
           {/* WhatsApp button */}

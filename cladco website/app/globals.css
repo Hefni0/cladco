@@ -1,12 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap");
 
-/* Laviossa — CladCo brand font */
+/* Laviossa — CladCo brand display font (Latin) */
 @font-face {
   font-family: "Laviossa";
   src: url("/fonts/Laviossa-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+}
+
+/* ─── Arabic typography ─── */
+[dir="rtl"], [lang="ar"] {
+  font-family: "IBM Plex Sans Arabic", "Inter", system-ui, sans-serif;
+  font-feature-settings: "ss01" off;
+  letter-spacing: 0;
+}
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3,
+[lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
+  font-family: "IBM Plex Sans Arabic", "Laviossa", serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+[dir="rtl"] .font-display, [lang="ar"] .font-display {
+  font-family: "IBM Plex Sans Arabic", "Laviossa", serif;
+  font-weight: 600;
+}
+/* Hero "Show Up Better" stays Latin even in Arabic mode */
+[dir="rtl"] .keep-latin, [lang="ar"] .keep-latin {
+  font-family: "Laviossa", "Inter", serif !important;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 @tailwind base;

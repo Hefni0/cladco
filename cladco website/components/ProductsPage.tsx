@@ -25,20 +25,20 @@ const CATEGORIES: Category[] = [
   {
     id: "uniforms",
     label:    { en: "Uniforms",            ar: "يونيفورم" },
-    headline: { en: "Workwear that means business.", ar: "ملابس عمل تعكس احترافيتك." },
+    headline: { en: "Workwear that means business.", ar: "يونيفورم لفريقك بهويتك." },
     desc: {
       en: "Chef coats, server uniforms, reception wear — tailored to your exact brand identity with premium fabrics and precise finishing.",
-      ar: "معاطف طهاة، يونيفورم للموظفين والاستقبال — مصممة بدقة تعكس هوية علامتك التجارية.",
+      ar: "يونيفورم مخصص لفريقك بألوان وشعار وهوية تناسب مشروعك.",
     },
     tags: { en: ["Embroidery", "Screen Print", "Custom Fit", "All Sizes"], ar: ["تطريز", "طباعة", "قياس مخصص", "جميع المقاسات"] },
   },
   {
     id: "tshirts",
     label:    { en: "T-Shirts",            ar: "تيشيرتات" },
-    headline: { en: "Your logo. Every thread.", ar: "شعارك على كل خيط." },
+    headline: { en: "Your logo. Every thread.", ar: "تيشيرتات مخصصة لفريقك أو مشروعك." },
     desc: {
       en: "Premium branded tees built for teams. From minimalist chest prints to full custom graphics — every shirt carries your identity.",
-      ar: "تيشيرتات مميزة للفرق. من طباعة الصدر البسيطة إلى التصاميم المخصصة الكاملة.",
+      ar: "خامات متعددة وطباعة مخصصة بألوان وشعار علامتك.",
     },
     tags: { en: ["100% Cotton", "Polo", "Crew Neck", "Custom Colors"], ar: ["قطن 100%", "بولو", "رقبة مستديرة", "ألوان مخصصة"] },
     video: "/videos/tshirt.mp4",
@@ -46,20 +46,20 @@ const CATEGORIES: Category[] = [
   {
     id: "caps",
     label:    { en: "Caps",                ar: "كابات" },
-    headline: { en: "Top it off. Brand it right.", ar: "أتم إطلالتك. بالشعار الصحيح." },
+    headline: { en: "Top it off. Brand it right.", ar: "كابات مخصصة بتفاصيل تعكس هويتك." },
     desc: {
       en: "Structured and unstructured caps, snapbacks, and beanies — all custom embroidered with your logo or brand mark.",
-      ar: "كابات منظمة وغير منظمة، سناب باك وقبعات محبوكة — مطرزة بشعارك.",
+      ar: "كابات سناب باك، قبعات، وتطريز مخصص بشعار مشروعك.",
     },
     tags: { en: ["Embroidered", "Snapback", "Bucket Hat", "Custom Strap"], ar: ["تطريز", "سناب باك", "باكيت هات", "حزام مخصص"] },
   },
   {
     id: "badges",
-    label:    { en: "Badges & Lanyards",   ar: "بادجات وسحابات" },
-    headline: { en: "Identity, worn with confidence.", ar: "هويتك، بكل ثقة." },
+    label:    { en: "Badges & Lanyards",   ar: "بطاقات ولانيرات" },
+    headline: { en: "Identity, worn with confidence.", ar: "تفاصيل تعطي فريقك مظهر مرتب وموحد." },
     desc: {
       en: "ID badges, lanyards, and cardholder sets that give your team a polished, professional look at every door.",
-      ar: "بادجات هوية، سحابات وحوامل بطاقات تمنح فريقك مظهراً احترافياً في كل مكان.",
+      ar: "بطاقات هوية، لانيرات، وحوامل بطاقات تمنح فريقك مظهرًا احترافيًا في كل مكان.",
     },
     tags: { en: ["PVC Badges", "Metal Clips", "Custom Lanyards", "Cardholders"], ar: ["بادجات PVC", "مشابك معدنية", "سحابات مخصصة", "حوامل بطاقات"] },
     video: "/videos/badge.mp4",
@@ -67,21 +67,21 @@ const CATEGORIES: Category[] = [
   {
     id: "notebooks",
     label:    { en: "Notebooks",           ar: "دفاتر" },
-    headline: { en: "Branded down to the last page.", ar: "هوية علامتك في كل صفحة." },
+    headline: { en: "Branded down to the last page.", ar: "دفاتر مخصصة لهوية مشروعك." },
     desc: {
       en: "Custom notebooks with your logo on the cover. Premium softcover and hardcover options — perfect for corporate gifting and daily use.",
-      ar: "دفاتر مخصصة بشعارك على الغلاف. خيارات فاخرة للغلاف الناعم والصلب.",
+      ar: "دفاتر بأغلفة وداخليات مخصصة، تناسب الاستخدام اليومي والاجتماعات والهدايا المؤسسية.",
     },
     tags: { en: ["A5 / A4", "Softcover", "Hardcover", "Custom Insert"], ar: ["A5 / A4", "غلاف ناعم", "غلاف صلب", "داخلية مخصصة"] },
     video: "/videos/notebook.mp4",
   },
   {
     id: "cups",
-    label:    { en: "Tumblers & Cups",     ar: "ترامز وكؤوس" },
-    headline: { en: "Every sip, branded.", ar: "كل رشفة، بهويتك." },
+    label:    { en: "Tumblers & Cups",     ar: "أكواب وترامز" },
+    headline: { en: "Every sip, branded.", ar: "منتجات يومية تحمل هوية مشروعك." },
     desc: {
       en: "Branded tumblers, paper cups, and mugs that turn every coffee break into a brand moment. High-volume printing available.",
-      ar: "ترامز، أكواب ورقية ومجات بشعارك. كل استراحة قهوة تصبح لحظة علامة تجارية.",
+      ar: "ترامز، أكواب ورقية، ومجات بشعارك — حاضرة في كل استراحة قهوة.",
     },
     tags: { en: ["Stainless Steel", "Paper Cups", "Mugs", "Bulk Orders"], ar: ["ستيل", "أكواب ورقية", "مجات", "طلبات ضخمة"] },
     video: "/videos/cup.mp4",
@@ -99,10 +99,10 @@ const CATEGORIES: Category[] = [
   {
     id: "custom",
     label:    { en: "Custom Items",        ar: "منتجات مخصصة" },
-    headline: { en: "If you can imagine it, we brand it.", ar: "إذا تخيلته، نضع عليه شعارك." },
+    headline: { en: "If you can imagine it, we brand it.", ar: "عندك فكرة معينة؟ نساعدك تنفذها." },
     desc: {
       en: "From USB drives and tote bags to keychains and umbrellas — if it can carry your brand, we can produce it.",
-      ar: "من USB وشنط قماش إلى مفاتيح ومظلات — أي شيء يمكن أن يحمل علامتك، نحن نصنعه.",
+      ar: "منتجات مخصصة تناسب احتياج مشروعك وهويته.",
     },
     tags: { en: ["USB Drives", "Tote Bags", "Keychains", "Umbrellas"], ar: ["USB", "شنط قماش", "مفاتيح", "مظلات"] },
   },
@@ -333,7 +333,7 @@ function ProductsHero({ lang }: { lang: "en" | "ar" }) {
             transition={{ duration: 0.85, ease, delay: 0.1 }}
           >
             {isAr
-              ? <>{`منتجات تجعل`}<br /><span style={{ color: "#9A8B6E" }}>علامتك</span>{` تبرز.`}</>
+              ? <>{`كل اللي يحتاجه فريقك عشان `}<span style={{ color: "#9A8B6E" }}>يظهر بشكل احترافي</span>.</>
               : <>{`Products that make your`}<br /><span style={{ color: "#9A8B6E" }}>brand</span>{` show up better.`}</>
             }
           </motion.h1>
@@ -352,7 +352,7 @@ function ProductsHero({ lang }: { lang: "en" | "ar" }) {
             transition={{ duration: 0.75, ease, delay: 0.22 }}
           >
             {isAr
-              ? "يونيفورمات احترافية ومنتجات مخصصة لكل بيزنس يريد أن يظهر بأفضل صورة."
+              ? "يونيفورم ومنتجات مخصصة تساعد مشروعك يطلع بصورة مرتبة ومتناسقة."
               : "Premium uniforms and branded merchandise — for every business that wants to look the part, every single day."}
           </motion.p>
 
@@ -427,7 +427,7 @@ function CategoriesGrid({ lang }: { lang: "en" | "ar" }) {
             }}
           >
             {isAr
-              ? "تصفح الفئات، وتواصل معنا لأي استفسار أو عرض سعر مخصص."
+              ? "تصفح الفئات أو تواصل معنا إذا تحتاج طلب مخصص لمشروعك."
               : "Browse the categories below. Reach out for a custom quote on any product or combination."}
           </p>
         </motion.div>
@@ -458,7 +458,7 @@ function CategoriesGrid({ lang }: { lang: "en" | "ar" }) {
           variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
         >
           {isAr
-            ? "لا ترى ما تبحث عنه؟ تواصل معنا وسنعمل على طلبك المخصص."
+            ? "عندك طلب مختلف؟ نساعدك تجهزه بالشكل المناسب لمشروعك."
             : "Don't see what you need? We produce custom items on request."}
         </motion.p>
       </div>
@@ -473,7 +473,7 @@ function ProcessStrip({ lang }: { lang: "en" | "ar" }) {
   const isAr = lang === "ar";
 
   const steps = isAr
-    ? ["أخبرنا ما تحتاج", "نصمم ونؤكد", "ننتج", "نوصل"]
+    ? ["شاركنا فكرتك", "نجهز التصور المناسب", "يبدأ التنفيذ", "يوصل طلبك جاهز"]
     : ["Tell us what you need", "We design & confirm", "We produce", "We deliver"];
 
   return (
@@ -572,7 +572,7 @@ function ProductsCTA({ lang }: { lang: "en" | "ar" }) {
             maxWidth: 680,
           }}
         >
-          {isAr ? "جاهز لترقية إطلالة فريقك؟" : "Ready to upgrade your team's look?"}
+          {isAr ? "خلّ فريقك يطلع بالمستوى اللي يمثّل مشروعك." : "Ready to upgrade your team's look?"}
         </motion.h2>
 
         <motion.p
@@ -587,7 +587,7 @@ function ProductsCTA({ lang }: { lang: "en" | "ar" }) {
           }}
         >
           {isAr
-            ? "تواصل معنا على واتساب وابدأ طلبك المخصص."
+            ? "نرتب معك التفاصيل من البداية للنهاية بدون تعقيد."
             : "Message us on WhatsApp and we'll have your first mockup ready within 24 hours."}
         </motion.p>
 

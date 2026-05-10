@@ -6,10 +6,10 @@ import type { Lang } from "./translations";
 const LangContext = createContext<{
   lang: Lang;
   toggle: () => void;
-}>({ lang: "en", toggle: () => {} });
+}>({ lang: "ar", toggle: () => {} });
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useState<Lang>("ar");
   const toggle = () => setLang((l) => (l === "en" ? "ar" : "en"));
   return (
     <LangContext.Provider value={{ lang, toggle }}>
