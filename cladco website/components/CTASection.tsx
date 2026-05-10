@@ -11,7 +11,7 @@ export default function CTASection() {
   const tr = t[lang].cta;
 
   return (
-    <section className="py-28 md:py-40" style={{ background: "#1a1816" }}>
+    <section className="py-28 md:py-40" style={{ background: "#111111" }}>
       <motion.div
         className="max-w-4xl mx-auto px-5 md:px-8 text-center"
         variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewport}

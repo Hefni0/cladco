@@ -333,7 +333,7 @@ export default function StatsAndCharts() {
   return (
     <>
       {/* ════════ Stats Section (light bg) ════════ */}
-      <section className="py-24 md:py-28 px-5 md:px-8" style={{ background: "#111111" }}>
+      <section className="py-24 md:py-28 px-5 md:px-8" style={{ background: "#1a1816" }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"

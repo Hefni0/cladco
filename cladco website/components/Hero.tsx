@@ -78,7 +78,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: "#1a1816" }}
+      style={{ background: "#0a0a0a" }}
     >
       {/* 3D CladCo logo — blurred, slow rotation, centered behind everything */}
       <div className="hero-3d-bg" aria-hidden="true">
@@ -126,7 +126,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1a1816] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
 
       {/* Top hairline */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#9A8B6E] to-transparent opacity-60" />

@@ -23,7 +23,7 @@ export default function WhatWeDo() {
   const tr = t[lang].services;
 
   return (
-    <section id="services" className="py-28 md:py-36" style={{ background: "#F9F8F6" }}>
+    <section id="services" className="py-28 md:py-36" style={{ background: "#1a1816" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         <motion.div
@@ -31,7 +31,7 @@ export default function WhatWeDo() {
           variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
         >
           <SectionLabelRow text={tr.label} />
-          <h2 className="section-heading max-w-xl mx-auto mt-2" style={{ color: "#0C0C0B" }}>
+          <h2 className="section-heading max-w-xl mx-auto mt-2" style={{ color: "#F9F8F6" }}>
             {tr.heading}
           </h2>
         </motion.div>
@@ -45,8 +45,8 @@ export default function WhatWeDo() {
               <motion.div
                 className="group rounded-2xl p-8 h-full relative overflow-hidden cursor-default"
                 style={{
-                  background: "#fff",
-                  border: "1px solid #EBEBEA",
+                  background: "#F9F8F6",
+                  border: "1px solid #E2E1DE",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 }}
                 whileHover={{

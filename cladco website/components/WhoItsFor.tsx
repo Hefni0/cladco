@@ -16,7 +16,7 @@ export default function WhoItsFor() {
   const tr = t[lang].audience;
 
   return (
-    <section className="py-24 md:py-32 bg-[#111111]">
+    <section className="py-24 md:py-32 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <div className="text-center mb-16">
           <p className="section-label">{tr.label}</p>
@@ -27,14 +27,14 @@ export default function WhoItsFor() {
           {tr.items.map((item, i) => (
             <div
               key={i}
-              className="card-lift bg-[#141414] border border-[#1e1e1e] hover:border-[#9A8B6E]/40 rounded-2xl p-6 md:p-8 flex flex-col gap-3 group"
+              className="card-lift bg-[#F9F8F6] border border-[#E2E1DE] hover:border-[#9A8B6E]/40 rounded-2xl p-6 md:p-8 flex flex-col gap-3 group"
             >
-              <span className="text-xs font-bold text-[#2a2a2a] tracking-widest group-hover:text-[#9A8B6E] transition-colors">
+              <span className="text-xs font-bold text-[#9A8B6E] tracking-widest group-hover:text-[#9A8B6E] transition-colors">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <h3 className="font-bold text-white text-base mb-1">{item.label}</h3>
-                <p className="text-sm text-gray-500 leading-snug">{item.desc}</p>
+                <h3 className="font-bold text-[#0C0C0B] text-base mb-1">{item.label}</h3>
+                <p className="text-sm text-[#6E6E6A] leading-snug">{item.desc}</p>
               </div>
             </div>
           ))}

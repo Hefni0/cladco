@@ -13,7 +13,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ background: "#1a1816", borderTop: "1px solid rgba(154,139,110,0.15)" }}>
+    <footer className="text-white relative overflow-hidden" style={{ background: "#0a0a0a", borderTop: "1px solid rgba(154,139,110,0.15)" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-12">
 
         <motion.div
