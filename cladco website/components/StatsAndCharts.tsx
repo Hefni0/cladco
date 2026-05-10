@@ -379,7 +379,7 @@ export default function StatsAndCharts() {
                   className="font-display mb-4 leading-none"
                   style={{
                     fontSize: it.display ? "clamp(1.6rem, 3vw, 2.4rem)" : "clamp(2.5rem, 5vw, 4rem)",
-                    color: "#4A5240",
+                    color: "#F9F8F6",
                     fontWeight: 600,
                   }}
                 >
